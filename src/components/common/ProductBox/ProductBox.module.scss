@@ -74,5 +74,19 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
   }
+
+  .price {
+    display: flex;
+    justify-content: space-between;
+
+    .oldPrice {
+      position: relative;
+      padding: 5px 10px;
+      text-decoration: line-through;
+      text-align: center;
+    }
+  }
+
 }
