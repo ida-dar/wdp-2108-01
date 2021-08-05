@@ -20,8 +20,6 @@ class NewFurniture extends React.Component {
   setDisplay(display, currDisplay) {
     if (currDisplay !== display) {
       this.setState({ currRWD: display });
-    } else {
-      console.log('all is fine');
     }
   }
 
