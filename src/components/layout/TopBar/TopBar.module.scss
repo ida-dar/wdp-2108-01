@@ -38,5 +38,31 @@
     .icon {
       margin-right: 5px;
     }
+
+    .logText {
+      display: inline-block;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .root {
+    background-color: $header-topbar-bg;
+  
+    .topOptions ul li {
+      margin-right: 0.5rem;
+  
+      .icon {
+        margin-left: 3px;
+      }
+    }
+  
+    .topMenu ul li {
+      margin-left: 1rem;
+  
+      .logText {
+        display: none;
+      }
+    }
   }
 }
