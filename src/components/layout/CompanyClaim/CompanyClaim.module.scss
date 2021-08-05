@@ -71,3 +71,25 @@
     }
   }
 }
+
+@media (max-width: 768px) {
+  .root {
+    .centerLogo {
+      margin-top: 30px;
+    }
+    .cart {
+      margin-top: 30px;
+    }
+    .phoneNumber {
+      position: relative;
+      top: -25px;
+      margin-left: 50%;
+      p {
+        font-size: 14px;
+        .icon {
+          font-size: 28px;
+        }
+      }
+    }
+  }
+}

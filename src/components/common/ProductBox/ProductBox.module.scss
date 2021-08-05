@@ -37,8 +37,11 @@
     .buttons {
       display: flex;
       justify-content: space-between;
+      visibility:hidden;
     }
   }
+
+
 
   .content {
     text-align: center;
@@ -95,4 +98,14 @@
     }
   }
 
+
+  &:hover {
+    .buttons {
+    visibility: visible;
+  }
+  .price :first-child{
+    background-color: #d58e32;
+   }
+
+  }
 }
