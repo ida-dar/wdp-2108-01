@@ -27,6 +27,7 @@ $header-bg: $color-darkgray;
 $footer-claim-bg: $color-black;
 $footer-bg: $color-darkgray;
 
+
 // Button
 $button-bg: $color-black;
 $button-outline: $color-black;
@@ -55,3 +56,12 @@ $menu-link-border: $color-white;
 $product-search-ul-border: $color-darkgray;
 $product-search-li-bg: $color-light;
 $product-search-ul-bg: $color-white;
+
+$form-border-color: #292929;
+
+// Placeholder for 'hover'
+$transition: color 250ms, background-color 250ms;
+
+%hover-animations {
+  transition: $transition;
+}
