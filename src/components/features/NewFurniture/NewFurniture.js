@@ -36,8 +36,6 @@ class NewFurniture extends React.Component {
     const { categories, products, addRating } = this.props;
     const { activeCategory, activePage, currRWD } = this.state;
 
-    console.log(products);
-
     const categoryProducts = products.filter(item => item.category === activeCategory);
     const pagesCount = Math.ceil(categoryProducts.length / 8);
 
@@ -104,8 +102,8 @@ class NewFurniture extends React.Component {
                 <ProductBox {...item} addRating={addRating} />
               </div>
             ))}
-            
-            // do przemyślenia
+          </div>
+          {/* DO PRZEMYŚLENIA */}
           <div className={'row'}>
             {currRWD === 'desktops'
               ? categoryProducts
