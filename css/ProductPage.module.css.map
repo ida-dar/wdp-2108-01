@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,KAAK,CAAC;EACJ,OAAO,ECHM,IAAI,CDGM,CAAC;CACzB",
+    "sources": [
+        "../src/components/views/ProductPage/ProductPage.module.scss",
+        "../src/styles/settings.scss"
+    ],
+    "names": [],
+    "file": "ProductPage.module.css"
+}

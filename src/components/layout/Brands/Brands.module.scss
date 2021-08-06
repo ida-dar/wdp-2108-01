@@ -1,0 +1,18 @@
+@import "../../../styles/settings.scss";
+
+.root {
+  height: 150px;
+
+  .brands {
+    border-top: 1px solid $brands-border;
+    border-bottom: 1px solid $brands-border;
+    padding: 24px 0;
+  }
+
+  .button {
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+}
