@@ -13,6 +13,7 @@ const initialState = {
       category: 'bed',
       price: 30,
       stars: 2,
+      userRating: 3,
       promo: 'sale',
       newFurniture: true,
       image:
@@ -24,6 +25,7 @@ const initialState = {
       category: 'bed',
       price: 30,
       stars: 2,
+      userRating: 4,
       promo: 'sale',
       newFurniture: true,
       image:
@@ -46,6 +48,7 @@ const initialState = {
       category: 'bed',
       price: 30,
       stars: 2,
+      userRating: 2,
       promo: 'sale',
       newFurniture: true,
       image:
@@ -274,6 +277,47 @@ const initialState = {
   ],
   cart: {
     products: [],
+  },
+  brands: [
+    {
+      id: 'brand-1',
+      name: 'brand-1',
+      image:
+        'https://images.pexels.com/photos/7031833/pexels-photo-7031833.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+    },
+    {
+      id: 'brand-2',
+      name: 'brand-2',
+      image:
+        'https://images.pexels.com/photos/5997965/pexels-photo-5997965.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+    },
+    {
+      id: 'brand-3',
+      name: 'brand-3',
+      image:
+        'https://images.pexels.com/photos/6782437/pexels-photo-6782437.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500',
+    },
+    {
+      id: 'brand-4',
+      name: 'brand-4',
+      image:
+        'https://images.pexels.com/photos/6238679/pexels-photo-6238679.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+    },
+    {
+      id: 'brand-5',
+      name: 'brand-5',
+      image:
+        'https://images.pexels.com/photos/6782269/pexels-photo-6782269.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+    },
+    {
+      id: 'brand-6',
+      name: 'brand-6',
+      image:
+        'https://images.pexels.com/photos/7031833/pexels-photo-7031833.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+    },
+  ],
+  layout: {
+    rwd: 'desktops',
   },
 };
 

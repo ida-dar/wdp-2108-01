@@ -5,6 +5,35 @@
     background-color: $footer-bg;
     padding: 3rem 0;
 
+    .footer {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: start;
+      img {
+        max-width: 100%;
+      }
+    }
+
+    @media(max-width: 374px) {
+      .footer {
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+    }
+    @media(min-width: 375px) {
+      .footer {
+        flex: 0 0 50%;
+        max-width: 50%;
+      }
+    }
+    @media(min-width: 768px) {
+      .footer {
+        flex: 0 0 25%;
+        max-width: 25%;
+        
+      }
+    }
+
     .menuWrapper {
       h6 {
         color: $white-text-color;
@@ -23,6 +52,7 @@
             color: rgb(169, 169, 169);
 
             &:hover {
+              @extend %hover-animations;
               color: $white-text-color;
             }
           }
@@ -47,8 +77,16 @@
     :global(.container) > :global(.row) {
       height: 95px;
     }
+    .new {
+      display: flex;
+      justify-content: center;
+      p {
+        color: rgb(169, 169, 169);  
+      }
+    }
 
     .copyright {
+      text-align: left;
       p {
         margin: 0;
         color: rgb(169, 169, 169);
@@ -58,6 +96,7 @@
     }
 
     .socialMedia {
+      text-align: right;
       ul {
         margin: 0;
         padding: 0;
@@ -72,11 +111,24 @@
             text-decoration: none;
 
             &:hover {
+              @extend %hover-animations;
               color: $primary;
             }
           }
         }
       }
     }
+    @media(max-width: 767px) {
+      .socialMedia {
+        text-align: center;
+      }
+      .copyright {
+        text-align: center;
+      }
+      .new {
+        text-align: center;
+      }
+    }
+    
   }
 }

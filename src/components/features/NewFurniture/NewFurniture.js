@@ -9,7 +9,20 @@ class NewFurniture extends React.Component {
   state = {
     activePage: 0,
     activeCategory: 'bed',
+    currRWD: 'desktops',
   };
+
+  componentDidMount() {
+    const func = () => this.setDisplay(this.props.rwd, this.state.currRWD);
+    func();
+    window.addEventListener('resize', func);
+  }
+
+  setDisplay(display, currDisplay) {
+    if (currDisplay !== display) {
+      this.setState({ currRWD: display });
+    }
+  }
 
   handlePageChange(newPage) {
     this.setState({ activePage: newPage });
@@ -20,8 +33,10 @@ class NewFurniture extends React.Component {
   }
 
   render() {
-    const { categories, products } = this.props;
-    const { activeCategory, activePage } = this.state;
+    const { categories, products, addRating } = this.props;
+    const { activeCategory, activePage, currRWD } = this.state;
+
+    console.log(products);
 
     const categoryProducts = products.filter(item => item.category === activeCategory);
     const pagesCount = Math.ceil(categoryProducts.length / 8);
@@ -82,15 +97,43 @@ class NewFurniture extends React.Component {
                 </div>
               </div>
             </div>
-            <div className='row'>
-              {categoryProducts
-                .slice(activePage * 8, (activePage + 1) * 8)
-                .map(item => (
-                  <div key={item.id} className='col-3'>
-                    <ProductBox {...item} />
-                  </div>
-                ))}
-            </div>
+          </div>
+          <div className='row'>
+            {categoryProducts.slice(activePage * 8, (activePage + 1) * 8).map(item => (
+              <div key={item.id} className='col-6 col-md-4 col-lg-3'>
+                <ProductBox {...item} addRating={addRating} />
+              </div>
+            ))}
+            
+            // do przemyślenia
+          <div className={'row'}>
+            {currRWD === 'desktops'
+              ? categoryProducts
+                  .slice(activePage * 8, (activePage + 1) * 8)
+                  .map(item => (
+                    <div key={item.id} className='col-3'>
+                      <ProductBox {...item} />
+                    </div>
+                  ))
+              : null}
+            {currRWD === 'tablets'
+              ? categoryProducts
+                  .slice(activePage * 4, (activePage + 1) * 4)
+                  .map(item => (
+                    <div key={item.id} className='col-3'>
+                      <ProductBox {...item} />
+                    </div>
+                  ))
+              : null}
+            {currRWD === 'phones'
+              ? categoryProducts
+                  .slice(activePage * 2, (activePage + 1) * 2)
+                  .map(item => (
+                    <div key={item.id} className='col-3'>
+                      <ProductBox {...item} />
+                    </div>
+                  ))
+              : null}
           </div>
         </div>
       </Swipeable>
@@ -99,6 +142,7 @@ class NewFurniture extends React.Component {
 }
 
 NewFurniture.propTypes = {
+  rwd: PropTypes.string,
   children: PropTypes.node,
   categories: PropTypes.arrayOf(
     PropTypes.shape({
@@ -117,6 +161,7 @@ NewFurniture.propTypes = {
       newFurniture: PropTypes.bool,
     })
   ),
+  addRating: PropTypes.func,
 };
 
 NewFurniture.defaultProps = {
