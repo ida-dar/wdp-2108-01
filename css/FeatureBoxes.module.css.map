@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,KAAK,CAAC;EACJ,OAAO,EAAE,MAAM;CAChB",
+    "sources": [
+        "../src/components/features/FeatureBoxes/FeatureBoxes.module.scss",
+        "../src/styles/settings.scss"
+    ],
+    "names": [],
+    "file": "FeatureBoxes.module.css"
+}

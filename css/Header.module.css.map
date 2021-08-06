@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "../src/components/layout/Header/Header.module.scss",
+        "../src/styles/settings.scss"
+    ],
+    "names": [],
+    "file": "Header.module.css"
+}

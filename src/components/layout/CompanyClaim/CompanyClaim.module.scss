@@ -29,7 +29,7 @@
     .cartBox {
       display: inline-block;
       position: relative;
-      color: #ffffff;
+      color: $white-text-color;
 
       .cartIcon {
         background-color: $primary;
@@ -64,7 +64,9 @@
       }
 
       &:hover {
+
         .cartIcon {
+          @extend %hover-animations;
           background-color: lighten($primary, 10%);
         }
       }
