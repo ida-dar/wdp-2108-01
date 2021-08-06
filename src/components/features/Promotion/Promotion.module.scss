@@ -1,0 +1,324 @@
+@import "../../../styles/settings.scss";
+
+.root {
+
+  .wrapper {
+    //border: 2px dotted red;
+  }
+  .productWrapperLeft {
+    position: relative;
+    padding: 0;
+    //border: 2px solid red;
+  }
+
+  .timeBar {
+    position: absolute;
+    padding: 0 30px;
+    top: 170px;
+    left: 0;
+    height: 80px;
+    width: 100%;
+    z-index: 90;
+    background-color: transparent;
+    .timeBarItem {
+      display: block;
+      margin: 15px 10px 0;
+      padding: 3px 0 0;
+      height: 60px;
+      text-align: center;
+      color: white;
+      border-radius: 50%;
+      background-color: $footer-claim-bg;
+      opacity: 0.8;
+      transform: scale(1.3);
+      .number {
+        margin: 7px 0 0;
+        font-size: 1.6rem;
+        line-height: 1;
+      }
+      .timeUnit {
+        font-size: 0.7rem;
+      }
+    }
+  }
+
+  .panelBar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 45px;
+    width: 100%;
+    z-index: 90;
+    background-color: $footer-claim-bg;
+
+    .title {
+      margin: 10px 0 0 15px;
+      color: white;
+      font-weight: 600;
+    }
+
+    .dots {
+      text-align: end;
+      margin: 4px 15px 0 0;
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        background-color: inherit;
+        transform: translateY(-5px);      
+
+        li {
+          display: inline-block;
+          margin-left: 0.5rem;
+          margin-right: 0;
+
+          a {
+            display: block;
+            width: 13px;
+            height: 13px;
+            border-radius: 6px;
+            background-color: #e1e1e1;
+            font-size: 0;
+
+            &.active,
+            &:hover {
+              background-color: $primary;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .productWrapperRight {
+    position: relative;
+    padding: 0;
+    height: 494px;
+    //border: 2px solid red;
+    .imgWrapper {
+      height: 100%;
+      width: 100%;
+      //border: 1px solid blue;
+      overflow: hidden;
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+    .shadowWrapper {
+      position: absolute;
+      height: 200px;
+      width: 100%;
+      top: 100px;
+      opacity: 0.5;
+      z-index: 90;
+      background-color: $footer-claim-bg;
+    }
+    .shadowTitle {
+      position: absolute;
+      text-align: center;
+      width: 100%;
+      top: 150px;
+      opacity: 0.5;
+      z-index: 90;
+      color: white;
+      font-size: 3rem;
+      opacity: 1;
+      span {
+        font-weight: 700;
+      }
+    }
+    .shadowSubtitle {
+      position: absolute;
+      text-align: center;
+      width: 100%;
+      top: 60px;
+      opacity: 0.5;
+      z-index: 90;
+      color: white;
+      font-size: 1.3rem;
+      opacity: 1;
+    }
+    .shadowButtonsWrapper {
+      position: absolute;
+      text-align: center;
+      padding: 0;
+      width: 100%;
+      bottom: 0px;
+      opacity: 0.5;
+      z-index: 90;
+      color: white;
+      font-size: 1.3rem;
+      opacity: 1;
+      overflow: hidden;
+      .button {
+        background-color: #2a2a2a;
+        .buttonChild {
+          margin: 0;
+          padding: 0;
+          height: 30px;
+        }
+      }
+    }
+    .mainButton {
+      position: absolute;
+      text-align: center;
+      padding: 0;
+      width: 100%;
+      bottom: 135px;
+      opacity: 0.5;
+      z-index: 100;
+      color: white;
+      font-size: 1.3rem;
+      opacity: 1;
+    }
+  }
+}
+
+@media(max-width: 1200px) {
+
+  .root {
+    .productWrapperRight {
+      height: 445px;
+    }
+    .timeBar {
+      top: 150px;
+      .timeBarItem {
+        height: 50px;
+        .number {
+          margin: 5px 0 0;
+          font-size: 1.4rem;
+        }
+        .timeUnit {
+          font-size: 0.6rem;
+        }
+      }
+    }
+  }
+}
+
+@media(max-width: 992px) {
+
+  .root {
+    .timeBar {
+      padding: 0 20px;
+      top: 100px;
+      .timeBarItem {
+        margin: 20px 2px 0;
+        height: 40px;
+        transform: scale(1.2);
+        .number {
+          margin: 3px 0 0;
+          font-size: 1rem;
+        }
+        .timeUnit {
+          font-size: 0.5rem;
+        }
+      }
+    }
+    .panelBar {
+      .title {
+        margin: 15px 0 0 10px;
+        font-size: 12px;
+      }
+      .dots {
+        margin: 5px 10px 0 0;
+        ul {  
+          li {
+            a {
+              width: 10px;
+              height: 10px;
+            }
+          }
+        }
+      }
+    }
+  
+    .productWrapperRight {
+      height: 380px;
+      .shadowWrapper {
+        top: 80px;
+      }
+      .shadowTitle {
+        top: 140px;
+        font-size: 2.3rem;
+      }
+      .shadowSubtitle {
+        top: 45px;
+        font-size: 1.2rem;
+      }
+      .mainButton {
+        bottom: 80px;
+        opacity: 0.5;
+        z-index: 100;
+        color: white;
+        font-size: 1.3rem;
+        opacity: 1;
+      }
+    }
+  }
+}
+
+@media(max-width: 768px) {
+
+  .root {
+    .timeBar {
+      padding: 0 20px;
+      top: 70px;
+      .timeBarItem {
+        margin: 15px 2px 0;
+        height: 30px;
+        transform: scale(1.2);
+        .number {
+          margin: 1px 0 0;
+          font-size: 0.8rem;
+        }
+        .timeUnit {
+          font-size: 0.4rem;
+        }
+      }
+    }
+    .panelBar {
+      height: 32px;
+      .title {
+        margin: 9px 0 0 10px;
+        font-size: 10px;
+      }
+      .dots {
+        margin: 0 10px 0 0;
+        ul {  
+          li {
+            a {
+              width: 8px;
+              height: 8px;
+            }
+          }
+        }
+      }
+    }
+  
+    .productWrapperRight {
+      height: 380px;
+      .shadowWrapper {
+        top: 80px;
+      }
+      .shadowTitle {
+        top: 140px;
+        font-size: 2rem;
+      }
+      .shadowSubtitle {
+        top: 45px;
+        font-size: 1rem;
+      }
+      .mainButton {
+        bottom: 80px;
+        opacity: 0.5;
+        z-index: 100;
+        color: white;
+        font-size: 1.3rem;
+        opacity: 1;
+      }
+    }
+  }
+}
