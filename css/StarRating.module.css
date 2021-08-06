@@ -1,0 +1,9 @@
+.starLabel {
+  cursor: pointer;
+}
+
+.starLabel .radio {
+  display: none;
+  cursor: pointer;
+}
+/*# sourceMappingURL=StarRating.module.css.map */

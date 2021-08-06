@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "../src/components/views/Homepage/Homepage.module.scss",
+        "../src/styles/settings.scss"
+    ],
+    "names": [],
+    "file": "Homepage.module.css"
+}
