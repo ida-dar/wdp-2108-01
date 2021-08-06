@@ -2,14 +2,16 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 const Swipeable = ({ leftAction, rightAction, children }) => {
-  const [touchStart, setTouchStart] = useState(0);
+  const [firstTouch, setfirstTouch] = useState(0);
 
   const handleTouchStart = e => {
-    setTouchStart(e.touches[0].clientX);
+    // Cache the client X
+    setfirstTouch(e.touches[0].clientX);
   };
 
   const handleTouchEnd = e => {
-    if (touchStart - e.changedTouches[0].clientX > 0) {
+    //The first touch point in the changedTouches//keeps updating
+    if (firstTouch - e.changedTouches[0].clientX > 0) {
       leftAction();
     } else {
       rightAction();

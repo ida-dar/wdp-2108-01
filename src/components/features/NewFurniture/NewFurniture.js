@@ -9,7 +9,6 @@ class NewFurniture extends React.Component {
   state = {
     activePage: 0,
     activeCategory: 'bed',
-    timer: 'active',
   };
 
   handlePageChange(newPage) {
@@ -17,20 +16,8 @@ class NewFurniture extends React.Component {
   }
 
   handleCategoryChange(newCategory) {
-    this.setTimer();
-    setTimeout(() => {
-      this.setState({ activeCategory: newCategory });
-    }, 3000);
-
+    this.setState({ activeCategory: newCategory });
   }
-
-  setTimer() {
-    this.setState({ timer: 'inactive' });
-    setTimeout(() => {
-      this.setState({ timer: 'active' });
-    }, 3000);
-  }
-
 
   render() {
     const { categories, products } = this.props;
@@ -39,14 +26,14 @@ class NewFurniture extends React.Component {
     const categoryProducts = products.filter(item => item.category === activeCategory);
     const pagesCount = Math.ceil(categoryProducts.length / 8);
 
-    const moveRight = () => {
+    const movePageRight = () => {
       const newPage = activePage - 1;
       if (newPage >= 0) {
         this.setState({ activePage: newPage });
       }
     };
 
-    const moveLeft = () => {
+    const movePageLeft = () => {
       const newPage = activePage + 1;
       if (newPage >= 0) {
         this.setState({ activePage: newPage });
@@ -68,7 +55,7 @@ class NewFurniture extends React.Component {
     }
 
     return (
-      <Swipeable leftAction={moveLeft} rightAction={moveRight}>
+      <Swipeable leftAction={movePageLeft} rightAction={movePageRight}>
         <div className={styles.root}>
           <div className='container'>
             <div className={styles.panelBar}>
@@ -96,11 +83,13 @@ class NewFurniture extends React.Component {
               </div>
             </div>
             <div className='row'>
-              {categoryProducts.slice(activePage * 8, (activePage + 1) * 8).map(item => (
-                <div key={item.id} className='col-3'>
-                  <ProductBox {...item} />
-                </div>
-              ))}
+              {categoryProducts
+                .slice(activePage * 8, (activePage + 1) * 8)
+                .map(item => (
+                  <div key={item.id} className='col-3'>
+                    <ProductBox {...item} />
+                  </div>
+                ))}
             </div>
           </div>
         </div>
