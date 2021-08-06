@@ -3,11 +3,13 @@ import PropTypes from 'prop-types';
 
 import styles from './NewFurniture.module.scss';
 import ProductBox from '../../common/ProductBox/ProductBox';
+import Swipeable from '../Swipeable/Swipeable';
 
 class NewFurniture extends React.Component {
   state = {
     activePage: 0,
     activeCategory: 'bed',
+    timer: 'active',
   };
 
   handlePageChange(newPage) {
@@ -15,8 +17,20 @@ class NewFurniture extends React.Component {
   }
 
   handleCategoryChange(newCategory) {
-    this.setState({ activeCategory: newCategory });
+    this.setTimer();
+    setTimeout(() => {
+      this.setState({ activeCategory: newCategory });
+    }, 3000);
+
   }
+
+  setTimer() {
+    this.setState({ timer: 'inactive' });
+    setTimeout(() => {
+      this.setState({ timer: 'active' });
+    }, 3000);
+  }
+
 
   render() {
     const { categories, products } = this.props;
@@ -24,6 +38,20 @@ class NewFurniture extends React.Component {
 
     const categoryProducts = products.filter(item => item.category === activeCategory);
     const pagesCount = Math.ceil(categoryProducts.length / 8);
+
+    const moveRight = () => {
+      const newPage = activePage - 1;
+      if (newPage >= 0) {
+        this.setState({ activePage: newPage });
+      }
+    };
+
+    const moveLeft = () => {
+      const newPage = activePage + 1;
+      if (newPage >= 0) {
+        this.setState({ activePage: newPage });
+      }
+    };
 
     const dots = [];
     for (let i = 0; i < pagesCount; i++) {
@@ -40,41 +68,43 @@ class NewFurniture extends React.Component {
     }
 
     return (
-      <div className={styles.root}>
-        <div className='container'>
-          <div className={styles.panelBar}>
-            <div className='row no-gutters align-items-end'>
-              <div className={'col-auto ' + styles.heading}>
-                <h3>New furniture</h3>
-              </div>
-              <div className={'col ' + styles.menu}>
-                <ul>
-                  {categories.map(item => (
-                    <li key={item.id}>
-                      <a
-                        className={item.id === activeCategory && styles.active}
-                        onClick={() => this.handleCategoryChange(item.id)}
-                      >
-                        {item.name}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className={'col-auto ' + styles.dots}>
-                <ul>{dots}</ul>
+      <Swipeable leftAction={moveLeft} rightAction={moveRight}>
+        <div className={styles.root}>
+          <div className='container'>
+            <div className={styles.panelBar}>
+              <div className='row no-gutters align-items-end'>
+                <div className={'col-auto ' + styles.heading}>
+                  <h3>New furniture</h3>
+                </div>
+                <div className={'col ' + styles.menu}>
+                  <ul>
+                    {categories.map(item => (
+                      <li key={item.id}>
+                        <a
+                          className={item.id === activeCategory && styles.active}
+                          onClick={() => this.handleCategoryChange(item.id)}
+                        >
+                          {item.name}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className={'col-auto ' + styles.dots}>
+                  <ul>{dots}</ul>
+                </div>
               </div>
             </div>
-          </div>
-          <div className='row'>
-            {categoryProducts.slice(activePage * 8, (activePage + 1) * 8).map(item => (
-              <div key={item.id} className='col-3'>
-                <ProductBox {...item} />
-              </div>
-            ))}
+            <div className='row'>
+              {categoryProducts.slice(activePage * 8, (activePage + 1) * 8).map(item => (
+                <div key={item.id} className='col-3'>
+                  <ProductBox {...item} />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
-      </div>
+      </Swipeable>
     );
   }
 }
