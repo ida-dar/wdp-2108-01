@@ -32,7 +32,7 @@ class NewFurniture extends React.Component {
   }
 
   render() {
-    const { categories, products } = this.props;
+    const { categories, products, addRating } = this.props;
     const { activeCategory, activePage, currRWD } = this.state;
 
     const categoryProducts = products.filter(item => item.category === activeCategory);
@@ -79,6 +79,14 @@ class NewFurniture extends React.Component {
               </div>
             </div>
           </div>
+          <div className='row'>
+            {categoryProducts.slice(activePage * 8, (activePage + 1) * 8).map(item => (
+              <div key={item.id} className='col-3'>
+                <ProductBox {...item} addRating={addRating} />
+              </div>
+            ))}
+            
+            // do przemyślenia
           <div className={'row'}>
             {currRWD === 'desktops'
               ? categoryProducts
@@ -134,6 +142,7 @@ NewFurniture.propTypes = {
       newFurniture: PropTypes.bool,
     })
   ),
+  addRating: PropTypes.func,
 };
 
 NewFurniture.defaultProps = {
