@@ -8,7 +8,20 @@ class NewFurniture extends React.Component {
   state = {
     activePage: 0,
     activeCategory: 'bed',
+    currRWD: 'desktops',
   };
+
+  componentDidMount() {
+    const func = () => this.setDisplay(this.props.rwd, this.state.currRWD);
+    func();
+    window.addEventListener('resize', func);
+  }
+
+  setDisplay(display, currDisplay) {
+    if (currDisplay !== display) {
+      this.setState({ currRWD: display });
+    }
+  }
 
   handlePageChange(newPage) {
     this.setState({ activePage: newPage });
@@ -20,7 +33,7 @@ class NewFurniture extends React.Component {
 
   render() {
     const { categories, products, addRating } = this.props;
-    const { activeCategory, activePage } = this.state;
+    const { activeCategory, activePage, currRWD } = this.state;
 
     const categoryProducts = products.filter(item => item.category === activeCategory);
     const pagesCount = Math.ceil(categoryProducts.length / 8);
@@ -72,6 +85,36 @@ class NewFurniture extends React.Component {
                 <ProductBox {...item} addRating={addRating} />
               </div>
             ))}
+            
+            // do przemyślenia
+          <div className={'row'}>
+            {currRWD === 'desktops'
+              ? categoryProducts
+                  .slice(activePage * 8, (activePage + 1) * 8)
+                  .map(item => (
+                    <div key={item.id} className='col-3'>
+                      <ProductBox {...item} />
+                    </div>
+                  ))
+              : null}
+            {currRWD === 'tablets'
+              ? categoryProducts
+                  .slice(activePage * 4, (activePage + 1) * 4)
+                  .map(item => (
+                    <div key={item.id} className='col-3'>
+                      <ProductBox {...item} />
+                    </div>
+                  ))
+              : null}
+            {currRWD === 'phones'
+              ? categoryProducts
+                  .slice(activePage * 2, (activePage + 1) * 2)
+                  .map(item => (
+                    <div key={item.id} className='col-3'>
+                      <ProductBox {...item} />
+                    </div>
+                  ))
+              : null}
           </div>
         </div>
       </div>
@@ -80,6 +123,7 @@ class NewFurniture extends React.Component {
 }
 
 NewFurniture.propTypes = {
+  rwd: PropTypes.string,
   children: PropTypes.node,
   categories: PropTypes.arrayOf(
     PropTypes.shape({

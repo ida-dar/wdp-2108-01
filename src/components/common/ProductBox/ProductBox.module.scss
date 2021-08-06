@@ -37,8 +37,11 @@
     .buttons {
       display: flex;
       justify-content: space-between;
+      visibility:hidden;
     }
   }
+
+
 
   .content {
     text-align: center;
@@ -73,5 +76,29 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+  }
+
+  .price {
+    display: flex;
+    justify-content: space-between;
+
+    .oldPrice {
+      position: relative;
+      padding: 5px 10px;
+      text-decoration: line-through;
+      text-align: center;
+    }
+  }
+
+
+  &:hover {
+    .buttons {
+    visibility: visible;
+  }
+  .price :first-child{
+    background-color: #d58e32;
+   }
+
   }
 }
