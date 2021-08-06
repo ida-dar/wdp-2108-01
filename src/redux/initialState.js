@@ -13,6 +13,7 @@ const initialState = {
       category: 'bed',
       price: 30,
       stars: 2,
+      userRating: 3,
       promo: 'sale',
       newFurniture: true,
       image:
@@ -24,6 +25,7 @@ const initialState = {
       category: 'bed',
       price: 30,
       stars: 2,
+      userRating: 4,
       promo: 'sale',
       newFurniture: true,
       image:
@@ -46,6 +48,7 @@ const initialState = {
       category: 'bed',
       price: 30,
       stars: 2,
+      userRating: 2,
       promo: 'sale',
       newFurniture: true,
       image:
@@ -313,6 +316,9 @@ const initialState = {
         'https://images.pexels.com/photos/7031833/pexels-photo-7031833.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
     },
   ],
+  layout: {
+    rwd: 'desktops',
+  },
 };
 
 export default initialState;
