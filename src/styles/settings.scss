@@ -1,13 +1,57 @@
 $base-padding: 24px;
 
-$header-topbar-bg: #434343;
-$header-bg: #363636;
+// Color Variables - ATTENTION! NOT TO BE USED IN COMPONENTS!
+$color-black: #2a2a2a;
+$color-dark: #292929;
+$color-darkgray: #363636;
+$color-gray: #434343;
+$color-lightgray: #b6b6b6;
+$color-vlightgray: #e1e1e1;
+$color-light: #f4f5f7;
+$color-white: #ffffff;
+$color-darkorange: #d58e32;
 
-$footer-claim-bg: #2a2a2a;
-$footer-bg: #363636;
+// Component color variables - TO BE USED IN COMPONENTS
+// Global
+$primary: $color-darkorange;
+$standard-text-color: $color-black;
+$text-color: $color-black;
+$white-text-color: $color-white;
+$form-border-color: $color-dark;
 
-$primary: #d58e32;
+// Header
+$header-topbar-bg: $color-gray;
+$header-bg: $color-darkgray;
 
-$text-color: #2a2a2a;
+// Footer
+$footer-claim-bg: $color-black;
+$footer-bg: $color-darkgray;
 
-$form-border-color: #292929;
+// Button
+$button-bg: $color-black;
+$button-outline: $color-black;
+
+// Feature box
+$feature-box-border: $color-lightgray;
+$feature-box-bg: $color-white;
+
+// Product box
+$product-box-bg: $color-white;
+$product-box-border: $color-vlightgray;
+$product-box-text: $color-light;
+$product-sale-bg: $color-dark;
+$product-line: $color-black;
+
+// New Furniture
+$new-furniture-border: $color-vlightgray;
+$new-furniture-list-bg: $color-white;
+$new-furniture-link-bg: $color-vlightgray;
+
+// Menu bar
+$menu-bg: $color-white;
+$menu-link-border: $color-white;
+
+// Product Search
+$product-search-ul-border: $color-darkgray;
+$product-search-li-bg: $color-light;
+$product-search-ul-bg: $color-white;

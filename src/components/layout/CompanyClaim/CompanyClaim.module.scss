@@ -29,11 +29,11 @@
     .cartBox {
       display: inline-block;
       position: relative;
-      color: #ffffff;
+      color: $white-text-color;
 
       .cartIcon {
         background-color: $primary;
-        width: 55px;
+        width: 70px;
         height: 50px;
         border-radius: 3px;
         display: flex;
@@ -42,29 +42,52 @@
         font-size: 20px;
 
         .icon {
-          margin-right: 5px;
+          margin-right: 15px;
         }
       }
 
       .cartCounter {
-        width: 28px;
-        height: 27px;
+        width: 37px;
+        height: 34px;
         border-radius: 14px;
         background-color: $header-bg;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 14px;
+        font-size: 13px;
         color: rgb(224, 227, 237);
         position: absolute;
         top: 50%;
-        right: 0;
+        right: 5px;
+        padding-left: 5px;
         transform: translate(50%, -50%);
       }
 
       &:hover {
         .cartIcon {
           background-color: lighten($primary, 10%);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .root {
+    .centerLogo {
+      margin-top: 30px;
+    }
+    .cart {
+      margin-top: 30px;
+    }
+    .phoneNumber {
+      position: relative;
+      top: -25px;
+      margin-left: 50%;
+      p {
+        font-size: 14px;
+        .icon {
+          font-size: 28px;
         }
       }
     }
