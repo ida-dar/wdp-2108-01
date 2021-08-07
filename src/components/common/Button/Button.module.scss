@@ -114,3 +114,10 @@
     color: #ffffff;
   }
 }
+
+.favourite {
+  @extend .outline;
+  background-color: $primary;
+  color: #ffffff;
+  border-color: $text-color;
+}

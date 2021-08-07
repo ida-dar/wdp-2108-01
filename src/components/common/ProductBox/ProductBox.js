@@ -18,6 +18,7 @@ const ProductBox = ({
   image,
   id,
   userRating,
+  changeFavourite,
 }) => (
   <div className={styles.root}>
     <div className={styles.photo}>
@@ -39,7 +40,10 @@ const ProductBox = ({
     <div className={styles.line}></div>
     <div className={styles.actions}>
       <div className={styles.outlines}>
-        <Button variant='outline' favourite={favourite}>
+        <Button
+          variant={favourite ? 'favourite' : 'outline'}
+          onClick={() => changeFavourite(id)}
+        >
           <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
         </Button>
         <Button variant='outline' toCompare={toCompare}>
@@ -66,6 +70,7 @@ ProductBox.propTypes = {
   userRating: PropTypes.number,
   favourite: PropTypes.bool,
   toCompare: PropTypes.bool,
+  changeFavourite: PropTypes.func,
 };
 
 export default ProductBox;
