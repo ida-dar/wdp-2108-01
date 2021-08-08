@@ -6,29 +6,73 @@ import Button from '../../common/Button/Button';
 
 class Promotion extends React.Component {
   state = {
-    activePage: 0,
-    pagesCount: 3,
+    activePageLeft: 0,
+    pagesCountLeft: 3,
+    activePageRight: 0,
+    pagesCountRight: this.props.products.length,
   };
 
-  handlePageChange(newPage) {
-    this.setState({ activePage: newPage });
+  intervalMethod = () => {
+    this.setState({
+      activePageLeft: this.state.activePageLeft < 2 ? this.state.activePageLeft + 1 : 0,
+    });
+  };
+
+  componentDidMount() {
+    this.interval = setInterval(this.intervalMethod, 3000);
+  }
+
+  handlePageLeftChange(newPage) {
+    clearInterval(this.interval);
+    setTimeout(() => {
+      this.interval = setInterval(this.intervalMethod, 3000);
+    }, 10000);
+    this.setState({ activePageLeft: newPage });
+  }
+
+  handlePageRightChangeIncrese() {
+    if (this.state.activePageRight < this.state.pagesCountRight - 1) {
+      this.setState({ activePageRight: this.state.activePageRight + 1 });
+    }
+  }
+
+  handlePageRightChangeDecrese() {
+    if (this.state.activePageRight > 0) {
+      this.setState({ activePageRight: this.state.activePageRight - 1 });
+    }
   }
 
   render() {
     const { products } = this.props;
-    const { pagesCount, activePage } = this.state;
+    const {
+      pagesCountLeft,
+      pagesCountRight,
+      activePageLeft,
+      activePageRight,
+    } = this.state;
 
     const dots = [];
-    for (let i = 0; i < pagesCount; i++) {
+    for (let i = 0; i < pagesCountLeft; i++) {
       dots.push(
         <li>
           <a
-            onClick={() => this.handlePageChange(i)}
-            className={i === activePage && styles.active}
+            onClick={() => this.handlePageLeftChange(i)}
+            className={i === activePageLeft && styles.active}
           >
             page {i}
           </a>
         </li>
+      );
+    }
+
+    const images = [];
+    for (let i = 0; i < pagesCountRight; i++) {
+      images.push(
+        <img
+          src={products[i].image}
+          alt={`image${[i]}`}
+          className={`${styles.image} ${i === activePageRight && styles.imageActive}`}
+        />
       );
     }
 
@@ -65,17 +109,11 @@ class Promotion extends React.Component {
                   </div>
                 </div>
               </div>
-              <ProductBox {...products[0]} />
+              <ProductBox {...products[activePageLeft]} />
             </div>
 
             <div className={`col-8 ${styles.productWrapperRight}`}>
-              <div className={styles.imgWrapper}>
-                <img
-                  src={
-                    'https://images.pexels.com/photos/1866149/pexels-photo-1866149.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260'
-                  }
-                />
-              </div>
+              <div className={styles.imgWrapper}>{images}</div>
               <div className={styles.shadowWrapper}></div>
               <div className={styles.shadowTitle}>
                 INDOOR <span>FURNITURE</span>
@@ -89,10 +127,20 @@ class Promotion extends React.Component {
               <div className={styles.shadowButtonsWrapper}>
                 <div className='row'>
                   <div className={`col-6 ${styles.button}`}>
-                    <Button variant='long'>{'<'}</Button>
+                    <Button
+                      onClick={() => this.handlePageRightChangeDecrese()}
+                      variant='long'
+                    >
+                      {'<'}
+                    </Button>
                   </div>
                   <div className={`col-6 ${styles.button}`}>
-                    <Button variant='long'>{'>'}</Button>
+                    <Button
+                      onClick={() => this.handlePageRightChangeIncrese()}
+                      variant='long'
+                    >
+                      {'>'}
+                    </Button>
                   </div>
                 </div>
               </div>
@@ -114,6 +162,7 @@ Promotion.propTypes = {
       stars: PropTypes.number,
       promo: PropTypes.string,
       newFurniture: PropTypes.bool,
+      image: PropTypes.string,
     })
   ),
 };
