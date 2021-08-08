@@ -499,6 +499,42 @@ const initialState = {
       image:
         'https://images.pexels.com/photos/7031833/pexels-photo-7031833.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
     },
+    {
+      id: 'brand-7',
+      name: 'brand-7',
+      image:
+        'https://images.pexels.com/photos/7031833/pexels-photo-7031833.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+    },
+    {
+      id: 'brand-8',
+      name: 'brand-8',
+      image:
+        'https://images.pexels.com/photos/6782269/pexels-photo-6782269.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+    },
+    {
+      id: 'brand-9',
+      name: 'brand-9',
+      image:
+        'https://images.pexels.com/photos/6782437/pexels-photo-6782437.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500',
+    },
+    {
+      id: 'brand-10',
+      name: 'brand-10',
+      image:
+        'https://images.pexels.com/photos/5997965/pexels-photo-5997965.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+    },
+    {
+      id: 'brand-11',
+      name: 'brand-11',
+      image:
+        'https://images.pexels.com/photos/7031833/pexels-photo-7031833.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+    },
+    {
+      id: 'brand-12',
+      name: 'brand-12',
+      image:
+        'https://images.pexels.com/photos/6238679/pexels-photo-6238679.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+    },
   ],
   layout: {
     rwd: 'desktops',
