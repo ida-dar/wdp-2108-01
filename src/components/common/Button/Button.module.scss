@@ -4,13 +4,10 @@
 // }
 
 .main {
-<<<<<<< HEAD
   background-color: $button-bg;
   color: $white-text-color;
-=======
   background-color: $text-color;
   color: #ffffff;
->>>>>>> 91d9906 (WDP210801-5 - karta produktu - przyciski stanu)
   font-size: 16px;
   line-height: 24px;
   font-weight: 600;
@@ -72,24 +69,18 @@
 .outline {
   display: inline-block;
   padding: 5px 10px;
-<<<<<<< HEAD
   border: 1px solid $button-outline;
   color: #2a2a2a;
-=======
   border: 1px solid $text-color;
   color: $text-color;
->>>>>>> 91d9906 (WDP210801-5 - karta produktu - przyciski stanu)
   font-size: 13px;
   line-height: 22px;
 
   &:not(.noHover):hover {
-<<<<<<< HEAD
     @extend %hover-animations;
     background-color: #2a2a2a;
     color: $white-text-color;
-=======
     background-color: $text-color;
     color: #ffffff;
->>>>>>> 91d9906 (WDP210801-5 - karta produktu - przyciski stanu)
   }
 }
