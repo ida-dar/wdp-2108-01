@@ -6,6 +6,8 @@
 .main {
   background-color: $button-bg;
   color: $white-text-color;
+  background-color: $text-color;
+  color: #ffffff;
   font-size: 16px;
   line-height: 24px;
   font-weight: 600;
@@ -17,6 +19,18 @@
     background-color: $primary;
     text-decoration: none;
   }
+}
+
+.favourite {
+  background-color: $primary;
+  color: #ffffff;
+  border-color: $text-color;
+}
+
+.toCompare {
+  background-color: $primary;
+  color: #ffffff;
+  border-color: $primary;
 }
 
 .small {
@@ -57,6 +71,8 @@
   padding: 5px 10px;
   border: 1px solid $button-outline;
   color: #2a2a2a;
+  border: 1px solid $text-color;
+  color: $text-color;
   font-size: 13px;
   line-height: 22px;
 
@@ -64,5 +80,7 @@
     @extend %hover-animations;
     background-color: #2a2a2a;
     color: $white-text-color;
+    background-color: $text-color;
+    color: #ffffff;
   }
 }
