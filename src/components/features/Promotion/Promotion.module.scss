@@ -89,16 +89,19 @@
     position: relative;
     padding: 0;
     height: 494px;
-    //border: 2px solid red;
     .imgWrapper {
       height: 100%;
       width: 100%;
-      //border: 1px solid blue;
       overflow: hidden;
-      img {
+      .image {
+        display: none;
         height: 100%;
         width: 100%;
         object-fit: cover;
+      }
+      .imageActive {
+        display: block;
+        animation: fade 1s;
       }
     }
     .shadowWrapper {
@@ -169,6 +172,11 @@
       opacity: 1;
     }
   }
+}
+
+@keyframes fade {
+  from {opacity: 0;}
+  to {opacity: 1;}
 }
 
 @media(max-width: 1200px) {
