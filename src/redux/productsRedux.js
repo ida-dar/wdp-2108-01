@@ -24,12 +24,13 @@ export default function reducer(statePart = [], action = {}) {
       return statePart.map(currentRating => {
         if (currentRating.id !== action.payload.id) {
           return currentRating;
+        } else {
+          localStorage.setItem(currentRating.id, action.payload.userRating);
+          return {
+            ...currentRating,
+            userRating: action.payload.userRating,
+          };
         }
-
-        return {
-          ...currentRating,
-          userRating: action.payload.userRating,
-        };
       });
     }
     default:

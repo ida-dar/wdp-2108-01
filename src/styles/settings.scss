@@ -9,14 +9,19 @@ $color-lightgray: #b6b6b6;
 $color-vlightgray: #e1e1e1;
 $color-light: #f4f5f7;
 $color-white: #ffffff;
+$color-orange: #FFA500;
 $color-darkorange: #d58e32;
+$color-lightblue: #6db4fe;
+$color-yellow: #e7d65a;
 
 // Component color variables - TO BE USED IN COMPONENTS
 // Global
 $primary: $color-darkorange;
+$secondary: $color-orange;
 $standard-text-color: $color-black;
 $text-color: $color-black;
 $white-text-color: $color-white;
+$gray-text-color: $color-gray;
 $form-border-color: $color-dark;
 
 // Header
@@ -60,6 +65,16 @@ $product-search-ul-bg: $color-white;
 // Brands
 $brands-border: $color-vlightgray;
 $form-border-color: #292929;
+
+// Login
+$login-bg-1: #344e65;
+$login-bg-2: #475f78;
+$login-cont-bg: $color-white;
+$l-input-border: $color-vlightgray;
+$login-link: $color-lightblue;
+$login-bt-border: $color-yellow;
+$login-bt-bg-1: #f6d636;
+$login-bt-bg-2: #f89327;
 
 // Placeholder for 'hover'
 $transition: color 250ms, background-color 250ms;

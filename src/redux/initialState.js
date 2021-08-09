@@ -18,6 +18,8 @@ const initialState = {
       newFurniture: true,
       image:
         'https://images.pexels.com/photos/1841149/pexels-photo-1841149.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260',
+      favourite: true,
+      toCompare: true,
     },
     {
       id: 'aenean-ru-bristique-2',
@@ -30,6 +32,7 @@ const initialState = {
       newFurniture: true,
       image:
         'https://images.pexels.com/photos/2417842/pexels-photo-2417842.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+      favourite: true,
     },
     {
       id: 'aenean-ru-bristique-3',
@@ -41,6 +44,8 @@ const initialState = {
       newFurniture: true,
       image:
         'https://images.pexels.com/photos/57627/pexels-photo-57627.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+      favourite: true,
+      toCompare: true,
     },
     {
       id: 'aenean-ru-bristique-4',
@@ -64,6 +69,7 @@ const initialState = {
       newFurniture: true,
       image:
         'https://images.pexels.com/photos/7031715/pexels-photo-7031715.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+      toCompare: true,
     },
     {
       id: 'aenean-ru-bristique-6',
@@ -75,6 +81,7 @@ const initialState = {
       newFurniture: true,
       image:
         'https://images.pexels.com/photos/5789955/pexels-photo-5789955.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+      favourite: true,
     },
     {
       id: 'aenean-ru-bristique-7',
@@ -86,6 +93,7 @@ const initialState = {
       newFurniture: true,
       image:
         'https://images.pexels.com/photos/860882/pexels-photo-860882.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+      toCompare: true,
     },
     {
       id: 'aenean-ru-bristique-8',
@@ -267,6 +275,182 @@ const initialState = {
       id: 'aenean-ru-bristique-24',
       name: 'Aenean Ru Bristique 24',
       category: 'bed',
+      price: 30,
+      stars: 2,
+      promo: 'sale',
+      newFurniture: true,
+      image:
+        'https://images.pexels.com/photos/1524232/pexels-photo-1524232.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+    },
+    {
+      id: 'aenean-ru-bristique-25',
+      name: 'Aenean Ru Bristique 25',
+      category: 'chair',
+      price: 30,
+      stars: 2,
+      promo: 'sale',
+      newFurniture: true,
+      image:
+        'https://images.pexels.com/photos/4993094/pexels-photo-4993094.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+    },
+    {
+      id: 'aenean-ru-bristique-26',
+      name: 'Aenean Ru Bristique 26',
+      category: 'chair',
+      price: 30,
+      stars: 2,
+      promo: 'sale',
+      newFurniture: true,
+      image:
+        'https://images.pexels.com/photos/4577673/pexels-photo-4577673.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+    },
+    {
+      id: 'aenean-ru-bristique-27',
+      name: 'Aenean Ru Bristique 27',
+      category: 'chair',
+      price: 30,
+      stars: 2,
+      promo: 'sale',
+      newFurniture: true,
+      image:
+        'https://images.pexels.com/photos/3201761/pexels-photo-3201761.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+    },
+    {
+      id: 'aenean-ru-bristique-28',
+      name: 'Aenean Ru Bristique 28',
+      category: 'chair',
+      price: 30,
+      stars: 2,
+      promo: 'sale',
+      newFurniture: true,
+      image:
+        'https://images.pexels.com/photos/1524232/pexels-photo-1524232.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+    },
+    {
+      id: 'aenean-ru-bristique-29',
+      name: 'Aenean Ru Bristique 29',
+      category: 'sofa',
+      price: 30,
+      stars: 2,
+      promo: 'sale',
+      newFurniture: true,
+      image:
+        'https://images.pexels.com/photos/4993094/pexels-photo-4993094.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+    },
+    {
+      id: 'aenean-ru-bristique-30',
+      name: 'Aenean Ru Bristique 30',
+      category: 'sofa',
+      price: 30,
+      stars: 2,
+      promo: 'sale',
+      newFurniture: true,
+      image:
+        'https://images.pexels.com/photos/4577673/pexels-photo-4577673.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+    },
+    {
+      id: 'aenean-ru-bristique-31',
+      name: 'Aenean Ru Bristique-31',
+      category: 'sofa',
+      price: 30,
+      stars: 2,
+      promo: 'sale',
+      newFurniture: true,
+      image:
+        'https://images.pexels.com/photos/3201761/pexels-photo-3201761.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+    },
+    {
+      id: 'aenean-ru-bristique-32',
+      name: 'Aenean Ru Bristique 32',
+      category: 'sofa',
+      price: 30,
+      stars: 2,
+      promo: 'sale',
+      newFurniture: true,
+      image:
+        'https://images.pexels.com/photos/1524232/pexels-photo-1524232.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+    },
+    {
+      id: 'aenean-ru-bristique-33',
+      name: 'Aenean Ru Bristique 33',
+      category: 'table',
+      price: 30,
+      stars: 2,
+      promo: 'sale',
+      newFurniture: true,
+      image:
+        'https://images.pexels.com/photos/4993094/pexels-photo-4993094.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+    },
+    {
+      id: 'aenean-ru-bristique-34',
+      name: 'Aenean Ru Bristique 34',
+      category: 'table',
+      price: 30,
+      stars: 2,
+      promo: 'sale',
+      newFurniture: true,
+      image:
+        'https://images.pexels.com/photos/4577673/pexels-photo-4577673.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+    },
+    {
+      id: 'aenean-ru-bristique-35',
+      name: 'Aenean Ru Bristique-35',
+      category: 'table',
+      price: 30,
+      stars: 2,
+      promo: 'sale',
+      newFurniture: true,
+      image:
+        'https://images.pexels.com/photos/3201761/pexels-photo-3201761.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+    },
+    {
+      id: 'aenean-ru-bristique-36',
+      name: 'Aenean Ru Bristique 36',
+      category: 'table',
+      price: 30,
+      stars: 2,
+      promo: 'sale',
+      newFurniture: true,
+      image:
+        'https://images.pexels.com/photos/1524232/pexels-photo-1524232.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+    },
+    {
+      id: 'aenean-ru-bristique-37',
+      name: 'Aenean Ru Bristique 37',
+      category: 'dining',
+      price: 30,
+      stars: 2,
+      promo: 'sale',
+      newFurniture: true,
+      image:
+        'https://images.pexels.com/photos/4993094/pexels-photo-4993094.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+    },
+    {
+      id: 'aenean-ru-bristique-38',
+      name: 'Aenean Ru Bristique 38',
+      category: 'dining',
+      price: 30,
+      stars: 2,
+      promo: 'sale',
+      newFurniture: true,
+      image:
+        'https://images.pexels.com/photos/4577673/pexels-photo-4577673.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+    },
+    {
+      id: 'aenean-ru-bristique-39',
+      name: 'Aenean Ru Bristique-39',
+      category: 'dining',
+      price: 30,
+      stars: 2,
+      promo: 'sale',
+      newFurniture: true,
+      image:
+        'https://images.pexels.com/photos/3201761/pexels-photo-3201761.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+    },
+    {
+      id: 'aenean-ru-bristique-40',
+      name: 'Aenean Ru Bristique 40',
+      category: 'dining',
       price: 30,
       stars: 2,
       promo: 'sale',

@@ -10,6 +10,7 @@ class NewFurniture extends React.Component {
     activePage: 0,
     activeCategory: 'bed',
     currRWD: 'desktops',
+    isFading: false,
   };
 
   componentDidMount() {
@@ -25,16 +26,38 @@ class NewFurniture extends React.Component {
   }
 
   handlePageChange(newPage) {
-    this.setState({ activePage: newPage });
+    this.setState({
+      activePage: newPage,
+      isFading: true,
+    });
+    if (this.state.isFading === false) {
+      setTimeout(
+        function() {
+          this.setState({ isFading: false });
+        }.bind(this),
+        1000
+      );
+    }
   }
 
   handleCategoryChange(newCategory) {
-    this.setState({ activeCategory: newCategory });
+    this.setState({
+      activeCategory: newCategory,
+      isFading: true,
+    });
+    if (this.state.isFading === false) {
+      setTimeout(
+        function() {
+          this.setState({ isFading: false });
+        }.bind(this),
+        1000
+      );
+    }
   }
 
   render() {
     const { categories, products, addRating } = this.props;
-    const { activeCategory, activePage, currRWD } = this.state;
+    const { activeCategory, activePage, currRWD, isFading } = this.state;
 
     const categoryProducts = products.filter(item => item.category === activeCategory);
     const pagesCount = Math.ceil(categoryProducts.length / 8);
@@ -66,7 +89,6 @@ class NewFurniture extends React.Component {
         </li>
       );
     }
-
     return (
       <Swipeable leftAction={movePageLeft} rightAction={movePageRight}>
         <div className={styles.root}>
@@ -96,7 +118,7 @@ class NewFurniture extends React.Component {
               </div>
             </div>
           </div>
-          <div className='row'>
+          <div className={`row ${isFading ? styles.fadeIn : styles.fadeOut}`}>
             {categoryProducts.slice(activePage * 8, (activePage + 1) * 8).map(item => (
               <div key={item.id} className='col-6 col-md-4 col-lg-3'>
                 <ProductBox {...item} addRating={addRating} />
@@ -105,15 +127,15 @@ class NewFurniture extends React.Component {
           </div>
           {/* DO PRZEMYŚLENIA */}
           <div className={'row'}>
-            {currRWD === 'desktops'
+            {/* {currRWD === 'desktops'
               ? categoryProducts
-                  .slice(activePage * 8, (activePage + 1) * 8)
-                  .map(item => (
-                    <div key={item.id} className='col-3'>
-                      <ProductBox {...item} />
-                    </div>
-                  ))
-              : null}
+                .slice(activePage * 8, (activePage + 1) * 8)
+                .map(item => (
+                  <div key={item.id} className='col-3'>
+                    <ProductBox {...item} />
+                  </div>
+                ))
+              : null} */}
             {currRWD === 'tablets'
               ? categoryProducts
                   .slice(activePage * 4, (activePage + 1) * 4)
@@ -160,6 +182,7 @@ NewFurniture.propTypes = {
     })
   ),
   addRating: PropTypes.func,
+  isFading: PropTypes.bool,
 };
 
 NewFurniture.defaultProps = {
