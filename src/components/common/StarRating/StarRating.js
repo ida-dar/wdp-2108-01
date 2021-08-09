@@ -19,6 +19,11 @@ const setColor = (hoverRating, rating, value, stars) => {
 const StarRating = ({ id, stars, userRating, addRating }) => {
   const [hoverRating, setHoverRating] = React.useState(0);
   const allStars = [1, 2, 3, 4, 5];
+  const savedRating = localStorage.getItem(id);
+
+  if (savedRating && savedRating !== userRating) {
+    userRating = savedRating;
+  }
 
   return (
     <div>

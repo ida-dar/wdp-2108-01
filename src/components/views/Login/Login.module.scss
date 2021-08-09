@@ -1,0 +1,59 @@
+@import "../../../styles/settings.scss";
+
+.root {
+  padding: $base-padding 0;
+  display: flex;
+  justify-content: center;
+    background: linear-gradient(110deg, $login-bg-1 60%, $login-bg-2 60%);
+
+  .container {
+    padding: 35px 50px;
+    border-radius: 5px;
+    border-top: 6px solid $secondary;
+    background: $login-cont-bg;
+
+    .formContainer {
+      display: flex;
+      flex-direction: column;
+
+
+      .label {
+        font-size: 16px;
+        font-weight: 500;
+        color: $gray-text-color;
+
+        .input {
+          margin-top: 3px;
+          border-radius: 5px;
+          border: 2px solid $l-input-border;
+          height: 44px;
+          width: 100%;
+        }
+      }
+
+      span {
+        padding: 5px 0;
+        font-size: 12px;
+        font-weight: 300;
+        color: gray;
+
+        a {
+            color: $login-link;
+        }
+      }
+      .buttonForm {
+          display: flex;
+          justify-content: center;
+          padding: 10px;
+
+        button {
+          font-weight: 500;
+          padding:  10px 25px;
+          border-radius: 5px;
+          border: 1px solid $login-bt-border;
+          background: linear-gradient($login-bt-bg-1, $login-bt-bg-2);
+        }
+      }
+    }
+  }
+}

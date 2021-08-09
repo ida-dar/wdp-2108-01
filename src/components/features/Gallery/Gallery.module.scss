@@ -89,11 +89,9 @@
     position: relative;
     padding: 0;
     height: 494px;
-    //border: 2px solid red;
     .imgWrapper {
       height: 100%;
       width: 100%;
-      //border: 1px solid blue;
       overflow: hidden;
       img {
         height: 100%;
@@ -101,67 +99,40 @@
         object-fit: cover;
       }
     }
-    .shadowWrapper {
-      position: absolute;
-      height: 200px;
-      width: 100%;
-      top: 100px;
-      opacity: 0.5;
-      z-index: 90;
-      background-color: $footer-claim-bg;
-    }
     .shadowTitle {
       position: absolute;
-      text-align: center;
+      text-align: start;
       width: 100%;
-      top: 150px;
+      top: 50px;
+      left: 40px;
       opacity: 0.5;
       z-index: 90;
-      color: white;
-      font-size: 3rem;
+      color:  $footer-claim-bg;
       opacity: 1;
+      font-weight: 700;
       span {
-        font-weight: 700;
+        color: green;
+        font-size: 3rem;
+        font-weight: 600;
       }
     }
     .shadowSubtitle {
       position: absolute;
-      text-align: center;
+      text-align: start;
       width: 100%;
       top: 60px;
       opacity: 0.5;
       z-index: 90;
-      color: white;
-      font-size: 1.3rem;
+      color: $primary;
+      font-size: 3rem;
       opacity: 1;
-    }
-    .shadowButtonsWrapper {
-      position: absolute;
-      text-align: center;
-      padding: 0;
-      width: 100%;
-      bottom: 0px;
-      opacity: 0.5;
-      z-index: 90;
-      color: white;
-      font-size: 1.3rem;
-      opacity: 1;
-      overflow: hidden;
-      .button {
-        background-color: #2a2a2a;
-        .buttonChild {
-          margin: 0;
-          padding: 0;
-          height: 30px;
-        }
-      }
     }
     .mainButton {
       position: absolute;
-      text-align: center;
+      text-align: start;
       padding: 0;
-      width: 100%;
-      bottom: 135px;
+      top: 190px;
+      left: 40px;
       opacity: 0.5;
       z-index: 100;
       color: white;
