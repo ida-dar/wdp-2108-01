@@ -1,0 +1,237 @@
+@import "../../../styles/settings.scss";
+
+.root {
+  height: 100px;
+
+  .panelBar {
+    margin-bottom: 30px;
+    position: relative;
+
+    :global(.row) > * {
+      border-bottom: 4px solid $new-furniture-border;
+    }
+
+    .heading {
+      position: relative;
+      width: 100%;
+
+      h3 {
+        color: $primary;
+        text-transform: uppercase;
+        font-size: 20px;
+        line-height: 38px;
+        margin: 0;
+        letter-spacing: 1px;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 45px;
+        border-bottom: 4px solid $primary;
+      }
+    }
+  }
+
+  .categoriesButtons {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    opacity: 0.5;
+    z-index: 90;
+    color: #2a2a2a;
+    font-size: 1.3rem;
+    opacity: 1;
+    overflow: hidden;
+    .categoryButton {
+      background-color: inherit;
+      padding: 0;
+      .buttonChild {
+        margin: 0;
+        padding: 0;
+        height: 30px;
+      }
+    }
+  }
+
+  .mainPartWrapper {
+    position: relative;
+    height: 290px;
+
+    .imageWrapper {
+      overflow: hidden;
+      height: 100%;
+      .image {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        object-position: bottom;
+      }
+    }
+
+    .actionsWrapper {
+      display: block;
+      position: absolute;
+      height: 130px;
+      top: 90px;
+      left: 5px;
+
+      .actions {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .tooltipHover {
+          position: relative;
+          &:after {
+            content: '';
+            position: absolute;
+            display: none;
+            padding: 7px 0;
+            top: 10px;
+            left: 45px;
+            height: 10px;
+            width: 15px;
+            transform: rotate(45deg);
+            font-size: 13px;
+            color: white;
+            text-align: center;
+            background-color: #2a2a2a;
+          }
+          &:hover {
+            &::after {
+              display: block;
+            }
+            .tooltip {
+              display: block;
+            }
+          }
+          .tooltip {
+            position: absolute;
+            display: none;
+            padding: 7px 0;
+            top: 0;
+            left: 50px;
+            height: 33px;
+            width: 130px;
+            font-size: 13px;
+            color: white;
+            text-align: center;
+            background-color: #2a2a2a;
+          }
+        }
+
+      }
+
+      .actions > * {
+        margin: 5px;
+      }
+    }
+
+    .content {
+      display: block;
+      position: absolute;
+      height: 100px;
+      width: 250px;
+      bottom: 20px;
+      right: 5px;
+      text-align: center;
+      padding: 20px;
+      background-color: white;
+      box-shadow: 0 5px 5px 0 #2a2a2a;
+      overflow: hidden;
+      &:after {
+        content: '';
+        position: absolute;
+        height: 50px;
+        width: 50px;
+        top: -25px;
+        left: -25px;
+        background-color: #2a2a2a;
+        transform: rotate(45deg);
+        z-index: 110;
+      }
+      &:before {
+        content: '';
+        position: absolute;
+        height: 50px;
+        width: 50px;
+        bottom: -25px;
+        right: -25px;
+        background-color: #2a2a2a;
+        transform: rotate(45deg);
+        z-index: 110;
+      }
+      .stars {
+        color: #2a2a2a;
+      }
+      h5 {
+        color: #2a2a2a;
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: 1px;
+      }
+    }
+
+    .timeBarItem {
+      position: absolute;
+      display: block;
+      margin: 15px 10px 0;
+      padding: 3px 0 0;
+      height: 70px;
+      top: 90px;
+      right: 80px;
+      text-align: center;
+      color: white;
+      border-radius: 50%;
+      background-color: $footer-claim-bg;
+      opacity: 0.8;
+      z-index: 120;
+      transform: scale(1.2);
+      .number {
+        margin: 20px 5px 0;
+        font-size: 1.0rem;
+        line-height: 1;
+      }
+      .timeUnit {
+        font-size: 0.7rem;
+        text-decoration: line-through;
+      }
+    }
+
+  }
+
+  .products {
+    border-top: 1px solid $brands-border;
+    border-bottom: 1px solid $brands-border;
+    padding: 10px 0;
+  }
+
+  .buttonWrapper {
+    text-align: center;
+    padding: 0;
+  }
+
+  .button {
+    height: 100%;
+    width: 30px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+  }
+
+  .imagesWrapper {
+    overflow: hidden;
+    display: flex;
+    flex-wrap: nowrap;
+    
+    .imageWrapper {
+      margin: 0 5px;
+    }
+  
+  }
+
+}
