@@ -13,12 +13,9 @@ export function validation(event) {
       if (fail) {
         fail.remove();
       }
-      container.insertAdjacentHTML(
-        'afterbegin',
-        "<span id='fail'> Wrong Password </span>"
-      );
+      container.insertAdjacentHTML('afterbegin', "<span id='fail'> Złe Hasło </span>");
     }
   } else {
-    container.insertAdjacentHTML('afterbegin', "<span id='fail'> Wrong Email </span>");
+    container.insertAdjacentHTML('afterbegin', "<span id='fail'> Zły Email </span>");
   }
 }
