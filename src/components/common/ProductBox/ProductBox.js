@@ -7,11 +7,14 @@ import { faExchangeAlt, faShoppingBasket } from '@fortawesome/free-solid-svg-ico
 import { faStar as faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from '../Button/Button';
 import StarRating from '../StarRating/StarRatingContainer';
+import { Link } from 'react-router-dom';
 
 const ProductBox = ({ name, price, promo, stars, favourite, toCompare, image, id, userRating }) => (
   <div className={styles.root}>
     <div className={styles.photo}>
-      <img src={image} alt={name} />
+      <Link to={`/product/${id}`}>
+        <img src={image} alt={name} />
+      </Link>
       {promo && <div className={styles.sale}>{promo}</div>}
       <div className={styles.buttons}>
         <Button variant='small'>Quick View</Button>
@@ -21,7 +24,9 @@ const ProductBox = ({ name, price, promo, stars, favourite, toCompare, image, id
       </div>
     </div>
     <div className={styles.content}>
-      <h5>{name}</h5>
+      <Link to={`/product/${id}`}>
+        <h5>{name}</h5>
+      </Link>
       <div className={styles.stars}>
         <StarRating stars={stars} id={id} userRating={userRating} />
       </div>
