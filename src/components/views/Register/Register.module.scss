@@ -1,0 +1,138 @@
+@import "../../../styles/settings.scss";
+
+.root {
+  padding: $base-padding 0;
+  display: flex;
+  justify-content: center;
+
+  .container {
+    padding: 35px 30px;
+    border-radius: 5px;
+    background: $login-cont-bg;
+
+    .account {
+      font-size: 18px;
+      margin-bottom: 36px;
+
+      input {
+        margin-right: 12px;
+      }
+    }
+
+    .formContainer {
+      display: flex;
+      flex-direction: column;
+
+      .label {
+        font-size: 16px;
+        font-weight: 500;
+        color: $gray-text-color;
+
+        .input {
+          margin-top: 3px;
+          padding-left: 12px;
+          border-radius: 5px;
+          border: 2px solid $r-input-border;
+          height: 44px;
+          width: 100%;
+
+          &:focus {
+            border: 2px solid $secondary;
+            outline: none;
+          }
+        }
+
+      }
+
+      .labelCheckbox {
+        input {
+          margin-right: 12px;
+        }
+        a {
+          color: $color-darkorange;
+        }
+      }
+
+      .buttonForm {
+        margin-top: 36px;
+      }
+
+      .button {
+        cursor: pointer;
+        font-weight: 500;
+        color: $color-white;
+        padding:  10px 0;
+        border: none;
+        border-radius: 5px;
+        background-color: $register-bt-bg-2;
+        width: 150px;
+      }
+
+    }
+  }
+}
+
+/* The switch - the box around the slider */
+.switchContainer {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 10px 0 45px 0;
+}
+
+.switch {
+  position: relative;
+  width: 35px;
+  height: 20px;
+  margin: 0 12px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 1px;
+  background-color: $color-white;
+  border: 1px solid $r-input-border;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 12px;
+  width: 12px;
+  left: 4px;
+  top: 3px;
+  background-color: $color-black;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: $register-bt-bg-2;
+}
+
+input:checked + .slider:before {
+  transform: translateX(100%);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
