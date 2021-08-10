@@ -80,7 +80,7 @@ class Promotion extends React.Component {
       <section className={styles.root}>
         <div className='container'>
           <div className={`row ${styles.wrapper}`}>
-            <div className={`col-4 ${styles.productWrapperLeft}`}>
+            <div className={`col-sm-4 ${styles.productWrapperLeft}`}>
               <div className={styles.panelBar}>
                 <div className='row justify-content-between'>
                   <div className={`col-5 ${styles.title}`}>HOT DEALS</div>
@@ -112,7 +112,7 @@ class Promotion extends React.Component {
               <ProductBox {...products[activePageLeft]} />
             </div>
 
-            <div className={`col-8 ${styles.productWrapperRight}`}>
+            <div className={`col-12 col-sm-8 ${styles.productWrapperRight}`}>
               <div className={styles.imgWrapper}>{images}</div>
               <div className={styles.shadowWrapper}></div>
               <div className={styles.shadowTitle}>
