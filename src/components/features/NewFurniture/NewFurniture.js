@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import styles from './NewFurniture.module.scss';
-import ProductBox from '../../common/ProductBox/ProductBoxContainer';
+import ProductBox from '../../common/ProductBox/ProductBox';
 import Swipeable from '../Swipeable/Swipeable';
 
 class NewFurniture extends React.Component {
@@ -118,7 +118,7 @@ class NewFurniture extends React.Component {
               </div>
             </div>
           </div>
-          <div className={`row ${isFading ? styles.fadeIn : styles.fadeOut}`}>
+          {/*<div className={`row ${isFading ? styles.fadeIn : styles.fadeOut}`}>
             {categoryProducts.slice(activePage * 8, (activePage + 1) * 8).map(item => (
               <div key={item.id} className='col-6 col-md-4 col-lg-3'>
                 <ProductBox {...item} addRating={addRating} />
@@ -126,22 +126,22 @@ class NewFurniture extends React.Component {
             ))}
           </div>
           {/* DO PRZEMYŚLENIA */}
-          <div className={'row'}>
-            {/* {currRWD === 'desktops'
+          <div className={`row ${isFading ? styles.fadeIn : styles.fadeOut}`}>
+            {currRWD === 'desktops'
               ? categoryProducts
-                .slice(activePage * 8, (activePage + 1) * 8)
-                .map(item => (
-                  <div key={item.id} className='col-3'>
-                    <ProductBox {...item} />
-                  </div>
-                ))
-              : null} */}
-            {currRWD === 'tablets'
-              ? categoryProducts
-                  .slice(activePage * 4, (activePage + 1) * 4)
+                  .slice(activePage * 8, (activePage + 1) * 8)
                   .map(item => (
                     <div key={item.id} className='col-3'>
-                      <ProductBox {...item} />
+                      <ProductBox {...item} addRating={addRating} />
+                    </div>
+                  ))
+              : null}
+            {currRWD === 'tablets'
+              ? categoryProducts
+                  .slice(activePage * 3, (activePage + 1) * 3)
+                  .map(item => (
+                    <div key={item.id} className='col-4'>
+                      <ProductBox {...item} addRating={addRating} />
                     </div>
                   ))
               : null}
@@ -149,8 +149,8 @@ class NewFurniture extends React.Component {
               ? categoryProducts
                   .slice(activePage * 2, (activePage + 1) * 2)
                   .map(item => (
-                    <div key={item.id} className='col-3'>
-                      <ProductBox {...item} />
+                    <div key={item.id} className='col-6'>
+                      <ProductBox {...item} addRating={addRating} />
                     </div>
                   ))
               : null}
