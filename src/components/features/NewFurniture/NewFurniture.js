@@ -127,7 +127,7 @@ class NewFurniture extends React.Component {
           </div>
           {/* DO PRZEMYŚLENIA */}
           <div className={'row'}>
-            {currRWD === 'desktops'
+            {/* {currRWD === 'desktops'
               ? categoryProducts
                   .slice(activePage * 8, (activePage + 1) * 8)
                   .map(item => (
@@ -135,7 +135,7 @@ class NewFurniture extends React.Component {
                       <ProductBox {...item} />
                     </div>
                   ))
-              : null}
+                  : null} */}
             {currRWD === 'tablets'
               ? categoryProducts
                   .slice(activePage * 4, (activePage + 1) * 4)
