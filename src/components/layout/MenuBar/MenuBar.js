@@ -16,27 +16,39 @@ const MenuBar = ({ children }) => (
           {/* For big screens & tablets */}
           <ul className='d-none d-md-flex col-md-12'>
             <li>
-              <a href='#' className={styles.active}>
+              <a href='/' className={'nav-link' + styles.active}>
                 Home
               </a>
             </li>
             <li>
-              <a href='#'>Furniture</a>
+              <a href='/shop/furniture' className='nav-link'>
+                Furniture
+              </a>
             </li>
             <li>
-              <a href='#'>Chair</a>
+              <a href='/shop/chair' className='nav-link'>
+                Chair
+              </a>
             </li>
             <li>
-              <a href='#'>Table</a>
+              <a href='/shop/table' className='nav-link'>
+                Table
+              </a>
             </li>
             <li>
-              <a href='#'>Sofa</a>
+              <a href='/shop/sofa' className='nav-link'>
+                Sofa
+              </a>
             </li>
             <li>
-              <a href='#'>Bedroom</a>
+              <a href='/shop/bedroom' className='nav-link'>
+                Bedroom
+              </a>
             </li>
             <li>
-              <a href='#'>Blog</a>
+              <a href='/blog' className='nav-link'>
+                Blog
+              </a>
             </li>
           </ul>
 
