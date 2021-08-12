@@ -521,6 +521,30 @@ const initialState = {
   layout: {
     rwd: 'desktops',
   },
+  feedback: [
+    {
+      id: 'client-1',
+      name: 'John Smith',
+      clientType: 'Furniture client',
+      quote:
+        'Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren.',
+      photo: 'https://i.postimg.cc/yYhMPT23/pexels-andrea-piacquadio-3771839-2.jpg',
+    },
+    /*{
+      id: 'client-2',
+      name: 'Lucas Jones',
+      clientType: 'Sofa client',
+      quote: 'Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren.',
+      photo: 'https://i.postimg.cc/YSPZ9DLZ/pexels-dziana-hasanbekava-7063778.jpg',
+    },
+    {
+      id: 'client-3',
+      name: 'Charlotte Williams',
+      clientType: 'Bedroom client',
+      quote: 'Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren.',
+      photo: 'https://i.postimg.cc/kGQpTnYP/pexels-christina-morillo-1181690.jpg',
+    },*/
+  ],
   blog: [
     {
       id: 'blog-1',
@@ -546,7 +570,6 @@ const initialState = {
       text:
         'Nullam at dapibus orci. Vestibulum tempus augue quis libero ultricies euismod. Duis at est a purus feugiat congue. Praesent quis lectus dictum lacus volutpat vehicula.',
     },
-  ],
 };
 
 export default initialState;
