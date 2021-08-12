@@ -6,6 +6,14 @@
     padding: 0;
   }
 
+  @media (max-width: 576px) {
+
+    .productWrapperLeft {
+      display: none;
+    }
+  
+  }
+
   .timeBar {
     position: absolute;
     padding: 0 30px;
