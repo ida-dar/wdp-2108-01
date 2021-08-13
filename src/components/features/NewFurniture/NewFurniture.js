@@ -1,4 +1,3 @@
-/* eslint-disable indent */
 import React from 'react';
 import PropTypes from 'prop-types';
 
@@ -90,6 +89,20 @@ class NewFurniture extends React.Component {
         </li>
       );
     }
+
+    let abc = 'col-3';
+    let number = 8;
+    if (currRWD === 'desktops') {
+      abc = 'col-3';
+      number = 8;
+    } else if (currRWD === 'tablets') {
+      abc = 'col-4';
+      number = 3;
+    } else if (currRWD === 'phones') {
+      abc = 'col-6';
+      number = 2;
+    }
+
     return (
       <Swipeable leftAction={movePageLeft} rightAction={movePageRight}>
         <div className={styles.root}>
@@ -120,33 +133,13 @@ class NewFurniture extends React.Component {
             </div>
           </div>
           <div className={`row ${isFading ? styles.fadeIn : styles.fadeOut}`}>
-            {currRWD === 'desktops'
-              ? categoryProducts
-                  .slice(activePage * 8, (activePage + 1) * 8)
-                  .map(item => (
-                    <div key={item.id} className='col-3'>
-                      <ProductBox {...item} addRating={addRating} />
-                    </div>
-                  ))
-              : null}
-            {currRWD === 'tablets'
-              ? categoryProducts
-                  .slice(activePage * 3, (activePage + 1) * 3)
-                  .map(item => (
-                    <div key={item.id} className='col-4'>
-                      <ProductBox {...item} addRating={addRating} />
-                    </div>
-                  ))
-              : null}
-            {currRWD === 'phones'
-              ? categoryProducts
-                  .slice(activePage * 2, (activePage + 1) * 2)
-                  .map(item => (
-                    <div key={item.id} className='col-6'>
-                      <ProductBox {...item} addRating={addRating} />
-                    </div>
-                  ))
-              : null}
+            {categoryProducts
+              .slice(activePage * number, (activePage + 1) * number)
+              .map(item => (
+                <div key={item.id} className={abc}>
+                  <ProductBox {...item} addRating={addRating} />
+                </div>
+              ))}
           </div>
         </div>
       </Swipeable>
