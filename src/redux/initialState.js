@@ -530,20 +530,22 @@ const initialState = {
         'Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren.',
       photo: 'https://i.postimg.cc/yYhMPT23/pexels-andrea-piacquadio-3771839-2.jpg',
     },
-    /*{
+    {
       id: 'client-2',
       name: 'Lucas Jones',
       clientType: 'Sofa client',
-      quote: 'Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren.',
+      quote:
+        'Eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren.',
       photo: 'https://i.postimg.cc/YSPZ9DLZ/pexels-dziana-hasanbekava-7063778.jpg',
     },
     {
       id: 'client-3',
       name: 'Charlotte Williams',
       clientType: 'Bedroom client',
-      quote: 'Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren.',
+      quote:
+        'Sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren.',
       photo: 'https://i.postimg.cc/kGQpTnYP/pexels-christina-morillo-1181690.jpg',
-    },*/
+    },
   ],
 };
 
