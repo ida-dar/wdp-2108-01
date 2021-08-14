@@ -14,7 +14,7 @@ import Search from './components/views/Search/Search';
 import Login from './components/views/Login/Login';
 import Blog from './components/views/Blog/Blog';
 import Register from './components/views/Register/Register';
-import Cart from './components/views/Cart/Cart';
+import Cart from './components/views/Cart/CartContainer';
 
 const App = () => (
   <Provider store={store}>
