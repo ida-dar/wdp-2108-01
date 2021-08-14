@@ -26,6 +26,11 @@ const ProductList = () => (
         </div>
       </div>
     </div>
+    <div className={styles.products}>
+      <div className={styles.productList + ' col-9'}> Product List </div>
+      <div className={styles.filters + ' col-3'}> Filters </div>
+    </div>
+    <div className={styles.brands}> Brands </div>
   </div>
 );
 

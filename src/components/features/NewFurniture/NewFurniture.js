@@ -129,13 +129,13 @@ class NewFurniture extends React.Component {
           <div className={'row'}>
             {/* {currRWD === 'desktops'
               ? categoryProducts
-                .slice(activePage * 8, (activePage + 1) * 8)
-                .map(item => (
-                  <div key={item.id} className='col-3'>
-                    <ProductBox {...item} />
-                  </div>
-                ))
-              : null} */}
+                  .slice(activePage * 8, (activePage + 1) * 8)
+                  .map(item => (
+                    <div key={item.id} className='col-3'>
+                      <ProductBox {...item} />
+                    </div>
+                  ))
+                  : null} */}
             {currRWD === 'tablets'
               ? categoryProducts
                   .slice(activePage * 4, (activePage + 1) * 4)
