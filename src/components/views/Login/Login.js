@@ -1,6 +1,12 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
 import styles from './Login.module.scss';
+import { validation } from '../../common/Validation/Validation.js';
+
+const handleRequest = event => {
+  event.preventDefault();
+  validation();
+};
 
 const Login = () => (
   <div className={styles.root}>
@@ -9,20 +15,25 @@ const Login = () => (
         <label className={styles.label}>
           {' '}
           Email <br />
-          <input className={styles.input} name='email' type='email' />
+          <input className={styles.input} id='email' name='email' type='text' />
         </label>
         <label className={styles.label}>
           {' '}
           Hasło <br />
-          <input className={styles.input} name='password' type='password' />
+          <input
+            className={styles.input}
+            id='password'
+            name='password'
+            type='password'
+          />
         </label>
         <span>
           {' '}
           Nie pamiętasz hasła? <a href='#'>Przypomnij hasło.</a>{' '}
         </span>
-        <form className={styles.buttonForm} action={`${process.env.PUBLIC_URL}/`}>
-          <button type='submit'>Zaloguj się</button>
-        </form>
+        <div className={styles.buttonContainer + ' cont'}>
+          <button onClick={handleRequest}>Zaloguj się</button>
+        </div>
       </form>
     </div>
   </div>
