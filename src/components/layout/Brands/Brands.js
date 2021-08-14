@@ -9,14 +9,26 @@ import Button from '../../common/Button/Button';
 
 const Brands = ({ brands }) => {
   const [brand] = useState(6);
-  const [activePage] = useState(0);
+  const [activePage, setActivePage] = useState(0);
+
+  const handleClickPrev = e => {
+    e.preventDefault();
+
+    setActivePage(activePage === 0 ? brands.length / brand - 1 : activePage - 1);
+  };
+
+  const handleClickNext = e => {
+    e.preventDefault();
+
+    setActivePage(activePage === brands.length / brand - 1 ? 0 : activePage + 1);
+  };
 
   return (
     <div className={styles.root}>
       <div className='container'>
         <div className={'row no-gutters justify-content-between ' + styles.brands}>
           <div>
-            <Button className={styles.button} variant='small'>
+            <Button className={styles.button} variant='small' onClick={handleClickPrev}>
               <FontAwesomeIcon icon={faChevronLeft} />
             </Button>
           </div>
@@ -28,7 +40,7 @@ const Brands = ({ brands }) => {
             ))}
           </div>
           <div>
-            <Button className={styles.button} variant='small'>
+            <Button className={styles.button} variant='small' onClick={handleClickNext}>
               <FontAwesomeIcon icon={faChevronRight} />
             </Button>
           </div>
