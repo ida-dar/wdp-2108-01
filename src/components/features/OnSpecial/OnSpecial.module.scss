@@ -1,0 +1,123 @@
+@import "../../../styles/settings.scss";
+
+.root {
+  margin-bottom: 2rem;
+
+  .specialWrapperLg {
+    display: flex;
+    flex-wrap: wrap;
+
+    .col {
+      max-height: 494px;
+      height: 100%;
+      width: 100%; 
+      overflow: hidden;
+      padding: 0;
+    }
+
+    .shadowWrapper {
+      position: absolute;
+      height: 86%;
+      width: 86%;
+      top: 7%;
+      left: 7%;
+      opacity: 0.2;
+      background-color: $product-sale-bg;
+    }
+
+    .photo {
+      min-width: 100%;
+      object-fit: cover;
+      margin-top: 8px;
+      position: relative;
+    }
+
+    .leftPhoto {
+      position: absolute;
+      bottom: 10%;
+      left: 10%;
+
+      .leftPhotoSubtitle {
+        color: $white-text-color;
+        font-size: 2rem;
+        span {
+          font-weight: 700;
+        }
+      }
+  
+      .leftPhotoTitle {
+        color: $white-text-color;
+        font-size: 3rem;
+        span {
+          font-weight: 700;
+        }
+      }
+  
+      .leftPhotoPromo {
+        color: $white-text-color;
+        font-size: 2.5rem;
+        span {
+          font-weight: 500;
+          border: solid;
+          padding: 2px 10px;
+        }
+      }
+    }
+
+    .topRightPhoto {
+      position: absolute;
+      top: 15%;
+      left: 40%;
+
+      .topRightPhotoTitle {
+        color: $standard-text-color;
+        font-size: 2.2rem;
+        span {
+          font-weight: 700;
+        }
+      }
+
+      .topRightPhotoSubtitle {
+        color: $standard-text-color;
+        font-size: 1.5rem;
+      }
+
+      .topRightPhotoPrice {
+        color: $primary;
+        font-size: 2rem;
+        span {
+          font-weight: 600;
+        }
+      }
+
+    }
+
+    .bottomRightPhoto {
+      position: absolute;
+      top: 35%;
+      right: 5%;
+
+      .bottomRightPhotoTitle {
+        color: $primary;
+        font-size: 2rem;
+        span {
+          font-weight: 700;
+        }
+      }
+
+      .bottomRightPhotoSubtitle {
+        color: $standard-text-color;
+        font-size: 1.4rem;
+      }
+    }
+
+    .specialWrapperSml {
+      position: relative;
+      max-height: 250px;
+      height: 50%;
+      width: 100%;
+      overflow: hidden;
+      padding-left: 10px; 
+    }
+  }
+}

@@ -1,0 +1,121 @@
+@import "../../../styles/settings.scss";
+
+.root {
+  .chatBoxContainer {
+    position: fixed;
+    bottom: 120px;
+    left: 50px;
+    height: 605px;
+    width: 305px;
+    z-index: 200;
+    //border: 2px solid hotpink;
+    .chatBoxButtonOpen {
+      position: absolute;
+      display: block;
+      bottom: -90px;
+    }
+    .chatBoxButtonClose {
+      position: absolute;
+      display: block;
+      bottom: -80px;
+    }
+    .chatBoxWrapperOpen {
+      position: absolute;
+      display: block;
+      bottom: 0;
+      padding: 0;
+      height: 600px;
+      width: 300px;
+      background-color: $white-text-color;
+      border: 3px solid $primary;
+      box-shadow: 2px 2px 10px 2px silver;
+      z-index: 200;
+      transition: 0.5s;
+      overflow: hidden;
+    }
+    .chatBoxWrapperClose {
+      position: absolute;
+      display: block;
+      bottom: 0;
+      padding: 0;
+      height: 0;
+      width: 300px;
+      background-color: transparent;
+      border: 3px solid transparent;
+      z-index: 200;
+      transition: 0.5s;
+      overflow: hidden;
+    }
+    .chatBoxContentHeader {
+      display: block;
+      text-align: end;
+      padding: 0;
+      height: 40px;
+      width: 100%;
+      background-color: $primary;
+      .chatBoxIcon {
+        display: inline-block;
+        width: 20px;
+        margin: 0 10px 5px 0;
+        font-size: 25px;
+        color: $color-black;
+      }
+    }
+    .chatBoxContentOpen {
+      display: block;
+      height: calc(100% - 100px);
+      width: 100%;
+      .chatBoxChat {
+        height: calc(100% - 50px);
+      }
+      .chatBoxInput {
+        position: relative;
+        height: 50px;
+        input {
+          margin: 0;
+          padding: 10px;
+          width: 100%;
+          font-size: 20px;
+          color: $white-text-color;
+          border: none;
+          outline: none;
+          background-color: $color-black;
+          &::placeholder {
+            color: $color-gray;
+          }
+        }
+        .chatBoxSend {
+          position: absolute;
+          top: 14px;
+          right: 3px;
+        }
+      }
+    }
+    .chatBoxChat {
+      padding: 10px;
+      .chatBoxBotMsg {
+        margin-left: 70px;
+        padding: 5px 10px;
+        right: 10px;
+        width: 200px;
+        box-shadow: 2px 5px 10px 2px silver;
+        //border: 1px solid blue;
+      }
+    }
+
+    .chatBoxContentFooter {
+      display: block;
+      height: 60px;
+      width: 100%;
+      padding: 10px 0;
+      background-color: $primary;
+      .chatBoxIcon {
+        display: block;
+        margin: 0 auto;
+        font-size: 30px;
+        color: $color-black;
+        text-align: center;
+      }
+    }
+  }
+}
