@@ -90,17 +90,17 @@ class NewFurniture extends React.Component {
       );
     }
 
-    let abc = 'col-3';
-    let number = 8;
+    let columnClass = 'col-3';
+    let productCount = 8;
     if (currRWD === 'desktops') {
-      abc = 'col-3';
-      number = 8;
+      columnClass = 'col-3';
+      productCount = 8;
     } else if (currRWD === 'tablets') {
-      abc = 'col-4';
-      number = 3;
+      columnClass = 'col-4';
+      productCount = 3;
     } else if (currRWD === 'phones') {
-      abc = 'col-6';
-      number = 2;
+      columnClass = 'col-6';
+      productCount = 2;
     }
 
     return (
@@ -134,9 +134,9 @@ class NewFurniture extends React.Component {
           </div>
           <div className={`row ${isFading ? styles.fadeIn : styles.fadeOut}`}>
             {categoryProducts
-              .slice(activePage * number, (activePage + 1) * number)
+              .slice(activePage * productCount, (activePage + 1) * productCount)
               .map(item => (
-                <div key={item.id} className={abc}>
+                <div key={item.id} className={columnClass}>
                   <ProductBox {...item} addRating={addRating} />
                 </div>
               ))}
