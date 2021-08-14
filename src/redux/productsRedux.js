@@ -13,9 +13,11 @@ const createActionName = name => `app/${reducerName}/${name}`;
 
 // action types
 export const ADD_RATING = createActionName('ADD_RATING');
+export const CHANGE_FAVOURITE = createActionName('CHANGE_FAVOURITE');
 
 // action creators
 export const addRating = payload => ({ payload, type: ADD_RATING });
+export const changeFavourite = payload => ({ payload, type: CHANGE_FAVOURITE });
 
 /* reducer */
 export default function reducer(statePart = [], action = {}) {
@@ -24,14 +26,30 @@ export default function reducer(statePart = [], action = {}) {
       return statePart.map(currentRating => {
         if (currentRating.id !== action.payload.id) {
           return currentRating;
+        } else {
+          localStorage.setItem(currentRating.id, action.payload.userRating);
+          return {
+            ...currentRating,
+            userRating: action.payload.userRating,
+          };
         }
-
-        return {
-          ...currentRating,
-          userRating: action.payload.userRating,
-        };
       });
     }
+
+    case CHANGE_FAVOURITE: {
+      const id = action.payload;
+      return statePart.map(product => {
+        if (id == product.id) {
+          return {
+            ...product,
+            favourite: !product.favourite,
+          };
+        }
+
+        return product;
+      });
+    }
+
     default:
       return statePart;
   }

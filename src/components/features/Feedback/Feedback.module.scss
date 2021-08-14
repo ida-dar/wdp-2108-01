@@ -4,10 +4,7 @@
   .panelBar {
     margin-bottom: 30px;
     position: relative;
-
-    :global(.row) > * {
-      border-bottom: 4px solid $new-furniture-border;
-    }
+    border-bottom: 4px solid $new-furniture-border;
 
     .heading {
       position: relative;
@@ -28,40 +25,6 @@
         left: 0;
         width: 45px;
         border-bottom: 4px solid $primary;
-      }
-    }
-
-    .menu {
-      text-align: center;
-      ul {
-        margin: 0;
-        padding: 0;
-        list-style: none;
-        li {
-          display: inline-block;
-          margin: 0 0.5rem;
-          font-weight: 600;
-
-          a {
-            color: rgb(42, 42, 42);
-            position: relative;
-            text-decoration: none;
-            font-size: 18px;
-            display: block;
-
-            &.active,
-            &:hover {
-              &::before {
-                content: "";
-                position: absolute;
-                bottom: -4px;
-                left: 0;
-                width: 100%;
-                border-bottom: 4px solid $primary;
-              }
-            }
-          }
-        }
       }
     }
 
@@ -88,6 +51,7 @@
             border-radius: 6px;
             background-color: $new-furniture-link-bg;
             font-size: 0;
+            cursor: default;
 
             &.active,
             &:hover {
@@ -100,13 +64,52 @@
     }
   }
 
-  .fadeIn {
-    opacity: 0;
-    transition: opacity 500ms ease-in-out;
-  }
+  .content {
+    .contentWrapper {
+      display: flex;
+      flex-direction: column;
+      max-width: 92%;
+      align-items: center;
+      margin: 30px auto 0;
 
-  .fadeOut {
-    opacity: 1;
-    transition: opacity 500ms ease-in-out;
+      .icon {
+        font-size: 20px;
+      }
+
+      .textContainer {
+        margin-top: 20px;
+        color: $feature-box-border;
+      }
+
+      .client {
+        margin: 20px 0 55px;
+        display: flex;
+
+        .imageWrapper {
+          flex-direction: row;
+
+          .image {
+            width: 75px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 5px;
+          }
+        }
+
+        .clientDetails {
+          margin-left: 20px;
+
+          p {
+            color: $feature-box-border;
+
+            &:first-of-type {
+              color: $header-topbar-bg;
+              font-weight: bold;
+              margin: 5px 0 0;
+            }
+          }
+        }
+      }
+    }
   }
 }

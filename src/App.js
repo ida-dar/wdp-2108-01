@@ -10,6 +10,10 @@ import MainLayout from './components/layout/MainLayout/MainLayoutContainer';
 import Homepage from './components/views/Homepage/Homepage';
 import ProductList from './components/views/ProductList/ProductList';
 import ProductPage from './components/views/ProductPage/ProductPage';
+import Search from './components/views/Search/Search';
+import Login from './components/views/Login/Login';
+import Blog from './components/views/Blog/Blog';
+import Cart from './components/views/Cart/Cart';
 
 const App = () => (
   <Provider store={store}>
@@ -20,6 +24,10 @@ const App = () => (
           <Route exact path={'/shop/:categoryId'} component={ProductList} />
           <Route exact path={'/search'} component={ProductList} />
           <Route exact path={'/product/:productId'} component={ProductPage} />
+          <Route exact path={'/search'} component={Search} />
+          <Route exact path={'/login'} component={Login} />
+          <Route exact path={'/blog'} component={Blog} />
+          <Route exact path={'/cart'} component={Cart} />
         </Switch>
       </MainLayout>
     </BrowserRouter>
