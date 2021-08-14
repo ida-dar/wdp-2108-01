@@ -27,3 +27,65 @@
     background: gray;
   }
 }
+.banner {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .title{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 160px;
+    background-color: $color-darkgray;
+    color: $color-white;
+    
+    h1 {
+      margin-bottom: 0;
+      width: 480px;
+      font-weight: 300;
+      
+      span {
+        font-weight: 600;
+      }
+    }
+    h5 {
+      max-width: 480px;
+      font-weight: 300;
+
+      span{
+        color: $color-orange;
+        font-weight: 400;
+      }
+    }
+  }
+  .nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    height: 40px;
+    background-color: $color-vlightgray;
+    font-size: 14px;
+
+    .Btn {
+      margin: 12px;
+      color: $color-black;
+      text-decoration: none;
+
+    }
+    .Btn:hover {
+      color: $color-orange;
+      font-weight: 500;
+    }
+    h3 {
+      font-size: 20px;
+      color: $color-dark;
+      margin: 5px;
+    }
+    
+  }
+}
+
