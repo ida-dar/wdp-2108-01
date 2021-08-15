@@ -89,6 +89,20 @@ class NewFurniture extends React.Component {
         </li>
       );
     }
+
+    let columnClass = 'col-3';
+    let productCount = 8;
+    if (currRWD === 'desktops') {
+      columnClass = 'col-3';
+      productCount = 8;
+    } else if (currRWD === 'tablets') {
+      columnClass = 'col-4';
+      productCount = 3;
+    } else if (currRWD === 'phones') {
+      columnClass = 'col-6';
+      productCount = 2;
+    }
+
     return (
       <Swipeable leftAction={movePageLeft} rightAction={movePageRight}>
         <div className={styles.root}>
@@ -119,41 +133,13 @@ class NewFurniture extends React.Component {
             </div>
           </div>
           <div className={`row ${isFading ? styles.fadeIn : styles.fadeOut}`}>
-            {categoryProducts.slice(activePage * 8, (activePage + 1) * 8).map(item => (
-              <div key={item.id} className='col-6 col-md-4 col-lg-3'>
-                <ProductBox {...item} addRating={addRating} />
-              </div>
-            ))}
-          </div>
-          {/* DO PRZEMYŚLENIA */}
-          <div className={'row'}>
-            {/* {currRWD === 'desktops'
-              ? categoryProducts
-                  .slice(activePage * 8, (activePage + 1) * 8)
-                  .map(item => (
-                    <div key={item.id} className='col-3'>
-                      <ProductBox {...item} />
-                    </div>
-                  ))
-                  : null} */}
-            {currRWD === 'tablets'
-              ? categoryProducts
-                  .slice(activePage * 4, (activePage + 1) * 4)
-                  .map(item => (
-                    <div key={item.id} className='col-3'>
-                      <ProductBox {...item} />
-                    </div>
-                  ))
-              : null}
-            {currRWD === 'phones'
-              ? categoryProducts
-                  .slice(activePage * 2, (activePage + 1) * 2)
-                  .map(item => (
-                    <div key={item.id} className='col-3'>
-                      <ProductBox {...item} />
-                    </div>
-                  ))
-              : null}
+            {categoryProducts
+              .slice(activePage * productCount, (activePage + 1) * productCount)
+              .map(item => (
+                <div key={item.id} className={columnClass}>
+                  <ProductBox {...item} addRating={addRating} />
+                </div>
+              ))}
           </div>
         </div>
       </Swipeable>
