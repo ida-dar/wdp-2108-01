@@ -6,7 +6,7 @@ const OnSpecial = props => (
   <div className={styles.root}>
     <div className='container'>
       <div className={'row ' + styles.specialWrapperLg}>
-        <div className={'col-6 ' + styles.col}>
+        <div className={'col-md-6 col-12 col-xs-12 ' + styles.col}>
           <img
             className={`${styles.photo} ${styles.shadow}`}
             src={
@@ -27,7 +27,7 @@ const OnSpecial = props => (
             </div>
           </div>
         </div>
-        <div className={'col-6 ' + styles.col}>
+        <div className={'col-md-6 col-12 col-xs-12 ' + styles.col}>
           <div className={styles.specialWrapperSml}>
             <img
               className={styles.photo}
