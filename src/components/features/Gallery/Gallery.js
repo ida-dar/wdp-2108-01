@@ -8,15 +8,56 @@ class Gallery extends React.Component {
   state = {
     activePage: 0,
     pagesCount: 3,
+    isFading: false,
+    activeTab: 'featured',
   };
 
   handlePageChange(newPage) {
     this.setState({ activePage: newPage });
   }
 
+  handleTabChange(newTab) {
+    this.setState({
+      activeTab: newTab,
+      isFading: true,
+    });
+    if (this.state.isFading === false) {
+      setTimeout(
+        function() {
+          this.setState({ isFading: false });
+        }.bind(this),
+        1000
+      );
+    }
+  }
+
+
+
+
   render() {
-    //const { products } = this.props;
+    const {  featured, topSeller, saleOff, topRated } = this.props;
     const { pagesCount, activePage } = this.state;
+    //const { actives } = this.props;
+    const { activeTab} = this.state;
+
+    const tabs = [
+      {
+        id: 'Featured',
+        products: featured,
+      },
+      {
+        id: 'TopSeller',
+        products: topSeller,
+      },
+      {
+        id: 'Sale Off',
+        products: saleOff,
+      },
+      {
+        id: 'Top Rated',
+        products: topRated,
+      },
+    ];
 
     const dots = [];
     for (let i = 0; i < pagesCount; i++) {
@@ -48,6 +89,7 @@ class Gallery extends React.Component {
                   }
                   alt='image1'
                 />
+
               </div>
               <div className={styles.shadowTitle}>
                 FROM <span>$50.80</span>
@@ -76,6 +118,10 @@ Gallery.propTypes = {
       newFurniture: PropTypes.bool,
     })
   ),
+  featured: PropTypes.arrayOf(PropTypes.object),
+  topSeller: PropTypes.arrayOf(PropTypes.object),
+  topRated: PropTypes.arrayOf(PropTypes.object),
+  saleOff: PropTypes.arrayOf(PropTypes.object),
 };
 
 Gallery.defaultProps = {

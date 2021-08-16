@@ -11,9 +11,47 @@ import { faExchangeAlt, faShoppingBasket } from '@fortawesome/free-solid-svg-ico
 import { faStar as faHeart } from '@fortawesome/free-regular-svg-icons';
 import StarRating from '../StarRating/StarRatingContainer';
 
-const ProductsSlider = ({ products }) => {
+const ProductsSlider = ({ products, featured, topSeller, saleOff, topRated }) => {
   const [product] = useState(6);
   const [activePage] = useState(0);
+
+  const tabs = [
+    {
+      name: 'FEATURED',
+      products: featured,
+    },
+    {
+      name: 'TOP SELLER',
+      products: topSeller,
+    },
+    {
+      name: 'SALE OFF',
+      products: saleOff,
+    },
+    {
+      name: 'TOP RATED',
+      products: topRated,
+    },
+  ];
+  const [isFading, setFading] = useState(false);
+  // const [isProductFading, setProductFading] = useState(false);
+  const [activeTab, setActiveTab] = useState(tabs[0]);
+  const [activeProduct, setActiveProduct] = useState(activeTab.products[0]);
+
+
+
+  const handleTabChange = (tabPressed) => {
+    setFading(true);
+    setTimeout(() => {
+      setActiveTab(tabs[tabPressed]);
+      setActiveProduct(tabs['FEATURED'].products[0]);
+    }, 300);
+    setTimeout(() => {
+      setFading(false);
+    }, 500);
+  };
+  console.log(activeTab);
+  console.log(activeProduct);
 
   return (
     <div className={styles.root}>
@@ -30,16 +68,16 @@ const ProductsSlider = ({ products }) => {
       <div className='container'>
         <div className={`row ${styles.categoriesButtons}`}>
           <div className={`col-3 ${styles.categoryButton}`}>
-            <Button variant='category'>FEATURED</Button>
+            <Button variant='category' className={activeTab.name ==='FEATURED' && styles.active} onClick={() => handleTabChange('FEATURED')}>FEATURED</Button>
           </div>
           <div className={`col-3 ${styles.categoryButton}`}>
-            <Button variant='category'>TOP SELLER</Button>
+            <Button variant='category' className={activeTab.name ==='TOP SELLER' && styles.active} onClick={() => handleTabChange('TOP SELLER')}>TOP SELLER</Button>
           </div>
           <div className={`col-3 ${styles.categoryButton}`}>
-            <Button variant='category'>SALE OFF</Button>
+            <Button variant='category' className={activeTab.name ==='SALE OFF' && styles.active} onClick={() => handleTabChange('SALE OFF')}>SALE OFF</Button>
           </div>
           <div className={`col-3 ${styles.categoryButton}`}>
-            <Button variant='category'>TOP RATED</Button>
+            <Button variant='category' className={activeTab.name ==='TOP RATED' && styles.active} onClick={() => handleTabChange('TOP RATED')}>TOP RATED</Button>
           </div>
         </div>
       </div>
@@ -49,9 +87,7 @@ const ProductsSlider = ({ products }) => {
           <div className={styles.imageWrapper}>
             <img
               className={styles.image}
-              src={
-                'https://images.pexels.com/photos/7319279/pexels-photo-7319279.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260'
-              }
+              src={activeProduct.image}
               alt='image1'
             />
           </div>
@@ -130,6 +166,10 @@ ProductsSlider.propTypes = {
       image: PropTypes.string,
     })
   ),
+  featured: PropTypes.arrayOf(PropTypes.object),
+  topSeller: PropTypes.arrayOf(PropTypes.object),
+  topRated: PropTypes.arrayOf(PropTypes.object),
+  saleOff: PropTypes.arrayOf(PropTypes.object),
 };
 
 ProductsSlider.defaultProps = {
