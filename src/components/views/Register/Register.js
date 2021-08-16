@@ -28,6 +28,10 @@ const Register = () => {
       passwordRepeat >= 3
     ) {
       return true;
+    } else {
+      window.alert('Sprawdź jeszcze raz poprawność Twoich danych');
+      event.preventDefault();
+      return false;
     }
   };
 
