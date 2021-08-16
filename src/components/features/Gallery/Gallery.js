@@ -31,14 +31,11 @@ class Gallery extends React.Component {
     }
   }
 
-
-
-
   render() {
-    const {  featured, topSeller, saleOff, topRated } = this.props;
+    const { featured, topSeller, saleOff, topRated } = this.props;
     const { pagesCount, activePage } = this.state;
     //const { actives } = this.props;
-    const { activeTab} = this.state;
+    const { activeTab } = this.state;
 
     const tabs = [
       {
@@ -89,7 +86,6 @@ class Gallery extends React.Component {
                   }
                   alt='image1'
                 />
-
               </div>
               <div className={styles.shadowTitle}>
                 FROM <span>$50.80</span>

@@ -9,7 +9,6 @@ export const getOnSale = ({ products }) =>
 export const getMinRate = ({ products }, minRate) =>
   products.filter(product => product.stars >= minRate);
 
-
 export const getNew = ({ products }) =>
   products.filter(item => item.newFurniture === true);
 

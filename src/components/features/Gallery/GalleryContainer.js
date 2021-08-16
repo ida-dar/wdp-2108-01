@@ -1,7 +1,12 @@
 import { connect } from 'react-redux';
 
 import Gallery from './Gallery';
-import {getNew, getProductForPrice, getOnSale, getMinRate} from '../../../redux/productsRedux';
+import {
+  getNew,
+  getProductForPrice,
+  getOnSale,
+  getMinRate,
+} from '../../../redux/productsRedux';
 
 const mapStateToProps = state => ({
   products: state.products,

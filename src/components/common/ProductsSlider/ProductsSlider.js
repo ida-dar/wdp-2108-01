@@ -38,9 +38,7 @@ const ProductsSlider = ({ products, featured, topSeller, saleOff, topRated }) =>
   const [activeTab, setActiveTab] = useState(tabs[0]);
   const [activeProduct, setActiveProduct] = useState(activeTab.products[0]);
 
-
-
-  const handleTabChange = (tabPressed) => {
+  const handleTabChange = tabPressed => {
     setFading(true);
     setTimeout(() => {
       setActiveTab(tabs[tabPressed]);
@@ -68,16 +66,40 @@ const ProductsSlider = ({ products, featured, topSeller, saleOff, topRated }) =>
       <div className='container'>
         <div className={`row ${styles.categoriesButtons}`}>
           <div className={`col-3 ${styles.categoryButton}`}>
-            <Button variant='category' className={activeTab.name ==='FEATURED' && styles.active} onClick={() => handleTabChange('FEATURED')}>FEATURED</Button>
+            <Button
+              variant='category'
+              className={activeTab.name === 'FEATURED' && styles.active}
+              onClick={() => handleTabChange('FEATURED')}
+            >
+              FEATURED
+            </Button>
           </div>
           <div className={`col-3 ${styles.categoryButton}`}>
-            <Button variant='category' className={activeTab.name ==='TOP SELLER' && styles.active} onClick={() => handleTabChange('TOP SELLER')}>TOP SELLER</Button>
+            <Button
+              variant='category'
+              className={activeTab.name === 'TOP SELLER' && styles.active}
+              onClick={() => handleTabChange('TOP SELLER')}
+            >
+              TOP SELLER
+            </Button>
           </div>
           <div className={`col-3 ${styles.categoryButton}`}>
-            <Button variant='category' className={activeTab.name ==='SALE OFF' && styles.active} onClick={() => handleTabChange('SALE OFF')}>SALE OFF</Button>
+            <Button
+              variant='category'
+              className={activeTab.name === 'SALE OFF' && styles.active}
+              onClick={() => handleTabChange('SALE OFF')}
+            >
+              SALE OFF
+            </Button>
           </div>
           <div className={`col-3 ${styles.categoryButton}`}>
-            <Button variant='category' className={activeTab.name ==='TOP RATED' && styles.active} onClick={() => handleTabChange('TOP RATED')}>TOP RATED</Button>
+            <Button
+              variant='category'
+              className={activeTab.name === 'TOP RATED' && styles.active}
+              onClick={() => handleTabChange('TOP RATED')}
+            >
+              TOP RATED
+            </Button>
           </div>
         </div>
       </div>
@@ -85,11 +107,7 @@ const ProductsSlider = ({ products, featured, topSeller, saleOff, topRated }) =>
       <div className='container'>
         <div className={styles.mainPartWrapper}>
           <div className={styles.imageWrapper}>
-            <img
-              className={styles.image}
-              src={activeProduct.image}
-              alt='image1'
-            />
+            <img className={styles.image} src={activeProduct.image} alt='image1' />
           </div>
 
           <div className={styles.actionsWrapper}>
