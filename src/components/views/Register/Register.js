@@ -25,11 +25,13 @@ const Register = () => {
       lastName.length >= 3 &&
       email.includes('@') &&
       password.length >= 3 &&
-      passwordRepeat >= 3
+      passwordRepeat.length >= 3
     ) {
       return true;
     } else {
-      window.alert('Sprawdź jeszcze raz poprawność Twoich danych');
+      window.alert(
+        'Sprawdź czy wszystkie pola z gwiazdką są uzupełnione oraz czy dane w nich są poprawne'
+      );
       event.preventDefault();
       return false;
     }
@@ -80,7 +82,7 @@ const Register = () => {
               type='text'
               id='first_name'
               name='first_name'
-              placeholder='Imię'
+              placeholder='Imię*'
               minLength='3'
               maxLength='30'
             />
@@ -93,7 +95,7 @@ const Register = () => {
               type='text'
               id='last_name'
               name='last_name'
-              placeholder='Nazwisko'
+              placeholder='Nazwisko*'
               minLength='3'
               maxLength='30'
             />
@@ -122,7 +124,7 @@ const Register = () => {
               minLength='3'
               onKeyUp={passwordMatch}
             />
-            <p className={styles.wrong}>Twoje Hasło musi mieć conajmniej 3 znaki </p>
+            <p className={styles.wrong}>Twoje Hasło musi mieć conajmniej 3 znaki</p>
           </label>
           <label className={styles.label}>
             {' '}

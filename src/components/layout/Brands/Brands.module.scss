@@ -2,11 +2,16 @@
 
 .root {
   height: 150px;
+  
 
   .brands {
     border-top: 1px solid $brands-border;
     border-bottom: 1px solid $brands-border;
     padding: 24px 0;
+    margin-bottom: -30px;
+    .row{
+      
+    }
   }
 
   .button {
