@@ -107,6 +107,9 @@ class NewFurniture extends React.Component {
     if (subpage === 'ProductPage') {
       columnClass = 'col-3';
       productCount = 4;
+    } else if (subpage === 'pageShop') {
+      columnClass = 'col-4';
+      productCount = 12;
     }
 
     return (
