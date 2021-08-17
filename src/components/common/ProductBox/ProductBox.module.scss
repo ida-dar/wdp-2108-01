@@ -5,6 +5,36 @@
   border: 1px solid $product-box-border;
   margin-bottom: 2rem;
 
+  .popoutShow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: block;
+    height: 100%;
+    width: 100%;
+    background-color: transparent;
+    z-index: 1000;
+    .popoutContainer {
+      position: fixed;
+      display: block;
+      top: 15%;
+      left: 15%;
+      height: 70%;
+      width: 70%;
+      z-index: 1001;
+      overflow: hidden;
+      .popoutButtonWrapper {
+        position: absolute;
+        top: 10px;
+        left: 10px; 
+      }
+    }
+  }
+
+  .popoutHide {
+    display: none;
+  }
+
   .photo {
     position: relative;
     padding: 10px;
