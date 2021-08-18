@@ -2,10 +2,10 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import styles from './ChatBox.module.scss';
 import Button from '../../common/Button/Button';
-import { AiOutlineSend } from 'react-icons/ai';
-import { BsChatSquareDots } from 'react-icons/bs';
-import { BiRefresh } from 'react-icons/bi';
-import { RiCloseFill } from 'react-icons/ri';
+//import { AiOutlineSend } from 'react-icons/ai';
+//import { BsChatSquareDots } from 'react-icons/bs';
+//import { BiRefresh } from 'react-icons/bi';
+//import { RiCloseFill } from 'react-icons/ri';
 
 const ChatBox = () => {
   const botMsgData = {
@@ -51,12 +51,12 @@ const ChatBox = () => {
           <div className={styles.chatBoxContentHeader}>
             <div className={styles.chatBoxIcon}>
               <Button onClick={() => console.log('refresh')} variant='chatTop'>
-                <BiRefresh />
+                {/*<BiRefresh />*/}
               </Button>
             </div>
             <div className={styles.chatBoxIcon}>
               <Button onClick={() => console.log('close')} variant='chatTop'>
-                <RiCloseFill />
+                {/*<RiCloseFill />*/}
               </Button>
             </div>
           </div>
@@ -68,14 +68,14 @@ const ChatBox = () => {
               <input placeholder='Input Your question' />
               <div className={styles.chatBoxSend}>
                 <Button onClick={() => handleBotMsg('userMsg')} variant='chatSend'>
-                  <AiOutlineSend />
+                  {/*<AiOutlineSend />*/}
                 </Button>
               </div>
             </div>
           </div>
           <div className={styles.chatBoxContentFooter}>
             <div className={styles.chatBoxIcon}>
-              <BsChatSquareDots />
+              {/*<BsChatSquareDots />*/}
             </div>
           </div>
         </div>
