@@ -484,74 +484,62 @@ const initialState = {
     {
       id: 'brand-1',
       name: 'brand-1',
-      image:
-        'https://images.pexels.com/photos/7031833/pexels-photo-7031833.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+      image: './images/1logo.jpg',
     },
     {
       id: 'brand-2',
       name: 'brand-2',
-      image:
-        'https://images.pexels.com/photos/5997965/pexels-photo-5997965.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+      image: './images/2logo.jpg',
     },
     {
       id: 'brand-3',
       name: 'brand-3',
-      image:
-        'https://images.pexels.com/photos/6782437/pexels-photo-6782437.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500',
+      image: './images/3logo.jpg',
     },
     {
       id: 'brand-4',
       name: 'brand-4',
-      image:
-        'https://images.pexels.com/photos/6238679/pexels-photo-6238679.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+      image: './images/4logo.jpg',
     },
     {
       id: 'brand-5',
       name: 'brand-5',
-      image:
-        'https://images.pexels.com/photos/6782269/pexels-photo-6782269.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+      image: './images/5logo.jpg',
     },
     {
       id: 'brand-6',
       name: 'brand-6',
-      image:
-        'https://images.pexels.com/photos/7031833/pexels-photo-7031833.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+      image: './images/6logo.jpg',
     },
     {
       id: 'brand-7',
       name: 'brand-7',
-      image:
-        'https://images.pexels.com/photos/7031833/pexels-photo-7031833.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+      image: './images/7logo.jpg',
     },
     {
       id: 'brand-8',
       name: 'brand-8',
-      image:
-        'https://images.pexels.com/photos/6782269/pexels-photo-6782269.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+      image: './images/8logo.jpg',
     },
     {
       id: 'brand-9',
       name: 'brand-9',
-      image:
-        'https://images.pexels.com/photos/6782437/pexels-photo-6782437.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500',
+      image: './images/9logo.jpg',
     },
     {
       id: 'brand-10',
       name: 'brand-10',
-      image:
-        'https://images.pexels.com/photos/5997965/pexels-photo-5997965.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+      image: './images/10logo.jpg',
     },
     {
       id: 'brand-11',
       name: 'brand-11',
-      image:
-        'https://images.pexels.com/photos/7031833/pexels-photo-7031833.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+      image: './images/11logo.jpg',
     },
     {
       id: 'brand-12',
       name: 'brand-12',
-      image:
-        'https://images.pexels.com/photos/6238679/pexels-photo-6238679.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+      image: './images/12logo.jpg',
     },
   ],
   layout: {

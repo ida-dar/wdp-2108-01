@@ -26,6 +26,9 @@ const Brands = ({ brands }) => {
   return (
     <div className={styles.root}>
       <div className='container'>
+        <div className={'col-auto ' + styles.heading}>
+          <h3>Brands</h3>
+        </div>
         <div className={'row no-gutters justify-content-between ' + styles.brands}>
           <div>
             <Button className={styles.button} variant='small' onClick={handleClickPrev}>
