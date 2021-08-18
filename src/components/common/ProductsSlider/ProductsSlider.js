@@ -42,14 +42,13 @@ const ProductsSlider = ({ products, featured, topSeller, saleOff, topRated }) =>
     setFading(true);
     setTimeout(() => {
       setActiveTab(tabs[tabPressed]);
-      setActiveProduct(tabs['FEATURED'].products[0]);
+      setActiveProduct(tabs[tabPressed].products[0]);
     }, 300);
     setTimeout(() => {
       setFading(false);
     }, 500);
   };
-  console.log(activeTab);
-  console.log(activeProduct);
+
 
   return (
     <div className={styles.root}>
