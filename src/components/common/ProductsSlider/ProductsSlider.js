@@ -49,7 +49,6 @@ const ProductsSlider = ({ products, featured, topSeller, saleOff, topRated }) =>
     }, 500);
   };
 
-
   return (
     <div className={styles.root}>
       <div className='container'>
