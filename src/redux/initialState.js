@@ -583,6 +583,32 @@ const initialState = {
       photo: 'https://i.postimg.cc/kGQpTnYP/pexels-christina-morillo-1181690.jpg',
     },
   ],
+  blog: [
+    {
+      id: 'blog-1',
+      date: '15 Jan 2016',
+      comments: '4',
+      title: 'Products That Fight Static',
+      text:
+        'Nullam at dapibus orci. Vestibulum tempus augue quis libero ultricies euismod. Duis at est a purus feugiat congue. Praesent quis lectus dictum lacus volutpat vehicula.',
+    },
+    {
+      id: 'blog-2',
+      date: '15 Jan 2016',
+      comments: '4',
+      title: 'Products That Fight Static',
+      text:
+        'Nullam at dapibus orci. Vestibulum tempus augue quis libero ultricies euismod. Duis at est a purus feugiat congue. Praesent quis lectus dictum lacus volutpat vehicula.',
+    },
+    {
+      id: 'blog-3',
+      date: '15 Jan 2016',
+      comments: '4',
+      title: 'Products That Fight Static',
+      text:
+        'Nullam at dapibus orci. Vestibulum tempus augue quis libero ultricies euismod. Duis at est a purus feugiat congue. Praesent quis lectus dictum lacus volutpat vehicula.',
+    },
+  ],
 };
 
 export default initialState;

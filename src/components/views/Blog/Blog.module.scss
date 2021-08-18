@@ -2,4 +2,85 @@
 
 .root {
   padding: $base-padding 0;
+  display: flex;
+  justify-content: center;
+
+
+  .container {
+    width: 80%;
+
+    .panelBar {
+      margin: 30px;
+      position: relative;
+      width: 95%;
+
+      :global(.row) > * {
+        border-bottom: 4px solid $new-furniture-border;
+      }
+
+    .heading {
+      position: relative;
+      width: 100%;
+
+      h3 {
+        color: $primary;
+        text-transform: uppercase;
+        font-size: 20px;
+        line-height: 38px;
+        margin: 0;
+        letter-spacing: 1px;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 45px;
+        border-bottom: 4px solid $primary;
+      }
+    }
+
+    .dots {
+      position: absolute;
+      right: 0;
+      top: 0;
+
+      ul {
+        margin: 0;
+        padding: 0 0 0 1rem;
+        list-style: none;
+        background-color: $new-furniture-list-bg;
+        transform: translateY(15px);
+
+        li {
+          display: inline-block;
+          margin-left: 0.5rem;
+
+          a {
+            display: block;
+            width: 13px;
+            height: 13px;
+            border-radius: 6px;
+            background-color: $new-furniture-link-bg;
+            font-size: 0;
+
+            &.active,
+            &:hover {
+              @extend %hover-animations;
+              background-color: $primary;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .articles {
+    position: relative;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 15px;
+  }
+  }
 }
