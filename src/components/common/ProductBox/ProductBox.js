@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {useState} from 'react';
+import { useState } from 'react';
 import styles from './ProductBox.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExchangeAlt, faShoppingBasket } from '@fortawesome/free-solid-svg-icons';
@@ -23,16 +23,15 @@ const ProductBox = ({
   changeFavourite,
   addToCart,
 }) => {
-
   const [popout, setPopout] = useState(false);
 
   const handleShowPopout = () => {
     setPopout(true);
-  }
+  };
 
   const handleHidePopout = () => {
     setPopout(false);
-  }
+  };
 
   const handleCart = e => {
     e.preventDefault();
@@ -41,12 +40,17 @@ const ProductBox = ({
 
   return (
     <div className={styles.root}>
-      <div className={popout ? styles.popoutShow : styles.popoutHide} onClick={() => handleHidePopout()}>
+      <div
+        className={popout ? styles.popoutShow : styles.popoutHide}
+        onClick={() => handleHidePopout()}
+      >
         <div className={styles.popoutContainer}>
           <div className={styles.buttonWrapper}>
-            <Button variant='small' onClick={() => handleHidePopout()}>x</Button>
+            <Button variant='small' onClick={() => handleHidePopout()}>
+              x
+            </Button>
           </div>
-          <Popout name={name} price={price} promo={promo} image={image}/>
+          <Popout name={name} price={price} promo={promo} image={image} />
         </div>
       </div>
       <div className={styles.photo}>
@@ -55,7 +59,9 @@ const ProductBox = ({
         </Link>
         {promo && <div className={styles.sale}>{promo}</div>}
         <div className={styles.buttons}>
-          <Button onClick={() => handleShowPopout()} variant='small'>Quick View</Button>
+          <Button onClick={() => handleShowPopout()} variant='small'>
+            Quick View
+          </Button>
           <Button variant='small' onClick={handleCart}>
             <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> ADD TO CART
           </Button>

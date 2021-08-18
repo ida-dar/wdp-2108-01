@@ -1,19 +1,15 @@
 import React from 'react';
 import styles from './Popout.module.scss';
 import FeatureBox from '../../common/FeatureBox/FeatureBox';
-import {
-  faSignature,
-  faStar,
-  faDollarSign
-} from '@fortawesome/free-solid-svg-icons';
+import PropTypes from 'prop-types';
+import { faSignature, faStar, faDollarSign } from '@fortawesome/free-solid-svg-icons';
 
-const Popout = ({name, price, promo, image}) => {
-
+const Popout = ({ name, price, promo, image }) => {
   return (
     <section className={styles.root}>
       <div className={styles.popoutWrapper}>
         <div className={styles.popoutProductImg}>
-          <img src={image} alt={name}/>
+          <img src={image} alt={name} />
         </div>
         <div className={styles.popoutProductInfo}>
           <div className={styles.popoutInfoWrapper}>
@@ -35,6 +31,13 @@ const Popout = ({name, price, promo, image}) => {
       </div>
     </section>
   );
+};
+
+Popout.propTypes = {
+  name: PropTypes.string,
+  price: PropTypes.number,
+  promo: PropTypes.string,
+  image: PropTypes.string,
 };
 
 export default Popout;
