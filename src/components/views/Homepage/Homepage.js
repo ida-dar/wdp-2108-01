@@ -1,5 +1,4 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
 
 import styles from './Homepage.module.scss';
 
@@ -8,17 +7,24 @@ import NewFurniture from '../../features/NewFurniture/NewFurnitureContainer';
 import Promotion from '../../features/Promotion/PromotionContainer';
 import Gallery from '../../features/Gallery/GalleryContainer';
 import Brands from '../../layout/Brands/BrandsContainer';
+import Blog from '../Blog/BlogContainer';
+
+import OnSpecial from '../../features/OnSpecial/OnSpecialContainer';
+import Feedback from '../../features/Feedback/FeedbackContainer';
+import ChatBox from '../../features/ChatBox/ChatBox';
 
 const Homepage = () => (
   <div className={styles.root}>
     <Promotion />
     <FeatureBoxes />
+    <OnSpecial />
     <NewFurniture />
     <Gallery />
+    <Blog />
     <Brands />
+    <Feedback />
+    <ChatBox />
   </div>
 );
-
-// Homepage.propTypes = {};
 
 export default Homepage;
