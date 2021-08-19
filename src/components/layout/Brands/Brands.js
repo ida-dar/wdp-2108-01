@@ -44,7 +44,6 @@ class Brands extends React.Component {
   render() {
     const { brands } = this.props;
     const { activePage, currRWD } = this.state;
-    const pagesCount = Math.ceil(brands.length / 6);
 
     let columnClass = 'col-2';
     let productCount = 6;
@@ -59,6 +58,8 @@ class Brands extends React.Component {
       productCount = 2;
     }
 
+    const pagesCount = Math.ceil(brands.length / productCount);
+
     return (
       <Swipeable leftAction={this.handleClickPrev} rightAction={this.handleClickNext}>
         <div className={styles.root}>
@@ -71,7 +72,10 @@ class Brands extends React.Component {
                 <Button
                   className={styles.button}
                   variant='small'
-                  onClick={() => this.handleClickPrev(activePage - 1)}
+                  onClick={e => {
+                    e.preventDefault();
+                    this.handleClickPrev(activePage - 1);
+                  }}
                 >
                   <FontAwesomeIcon icon={faChevronLeft} />
                 </Button>
@@ -91,7 +95,10 @@ class Brands extends React.Component {
                 <Button
                   className={styles.button}
                   variant='small'
-                  onClick={() => this.handleClickNext(activePage + 1, pagesCount)}
+                  onClick={e => {
+                    e.preventDefault();
+                    this.handleClickNext(activePage + 1, pagesCount);
+                  }}
                 >
                   <FontAwesomeIcon icon={faChevronRight} />
                 </Button>
