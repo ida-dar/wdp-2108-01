@@ -41,6 +41,15 @@
             outline: none;
           }
         }
+        .wrong {
+          display: none;
+          padding-top: 3px;
+          margin: 3px;
+        } 
+
+        input:not(:focus):invalid ~ .wrong {
+          display:block;
+        }
 
       }
 

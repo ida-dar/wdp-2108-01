@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import ProductReviews from '../../features/ProductReviews/ProductReviews';
+import NewFurniture from '../../features/NewFurniture/NewFurnitureContainer';
 import styles from './ProductPage.module.scss';
 import Button from '../../common/Button/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -192,6 +194,8 @@ const ProductPage = (id, userRating, stars) => (
           </div>
         </div>
       </div>
+      <ProductReviews />
+      <NewFurniture subpage='ProductPage' />
     </div>
   </div>
 );
