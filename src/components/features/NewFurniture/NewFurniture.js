@@ -56,7 +56,7 @@ class NewFurniture extends React.Component {
   }
 
   render() {
-    const { categories, products, addRating } = this.props;
+    const { categories, products, addRating, subpage } = this.props;
     const { activeCategory, activePage, currRWD, isFading } = this.state;
 
     const categoryProducts = products.filter(item => item.category === activeCategory);
@@ -101,6 +101,11 @@ class NewFurniture extends React.Component {
     } else if (currRWD === 'phones') {
       columnClass = 'col-6';
       productCount = 2;
+    }
+
+    if (subpage === 'ProductPage') {
+      columnClass = 'col-3';
+      productCount = 4;
     }
 
     return (
@@ -148,6 +153,7 @@ class NewFurniture extends React.Component {
 }
 
 NewFurniture.propTypes = {
+  subpage: PropTypes.string,
   rwd: PropTypes.string,
   children: PropTypes.node,
   categories: PropTypes.arrayOf(
