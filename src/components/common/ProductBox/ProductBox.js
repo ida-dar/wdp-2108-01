@@ -21,10 +21,25 @@ const ProductBox = ({
   userRating,
   changeFavourite,
   addToCart,
+  addToCompare,
+  getCount,
 }) => {
   const handleCart = e => {
     e.preventDefault();
     addToCart({ id, name, price, image });
+  };
+
+  const handleCompare = e => {
+    e.preventDefault();
+
+    let maxItemsCount = 4;
+
+    if (getCount < maxItemsCount) {
+      addToCompare({ id, image });
+      toCompare = true;
+    } else {
+      alert('You have selected maximum amount of items to compare');
+    }
   };
 
   return (
@@ -58,7 +73,7 @@ const ProductBox = ({
           >
             <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
           </Button>
-          <Button variant='outline' toCompare={toCompare}>
+          <Button variant='outline' onClick={handleCompare}>
             <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
           </Button>
         </div>
@@ -85,6 +100,8 @@ ProductBox.propTypes = {
   toCompare: PropTypes.bool,
   changeFavourite: PropTypes.func,
   addToCart: PropTypes.func,
+  addToCompare: PropTypes.func,
+  getCount: PropTypes.number,
 };
 
 export default ProductBox;
