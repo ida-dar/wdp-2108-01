@@ -19,7 +19,8 @@
     }
 
     .filters {
-      background: red;
+      display: flex;
+      flex-direction: column-reverse;
     }
   }
 
@@ -42,12 +43,12 @@
     height: 160px;
     background-color: $color-darkgray;
     color: $color-white;
-    
+
     h1 {
       margin-bottom: 0;
       width: 480px;
       font-weight: 300;
-      
+
       span {
         font-weight: 600;
       }
@@ -85,7 +86,6 @@
       color: $color-dark;
       margin: 5px;
     }
-    
+
   }
 }
-
