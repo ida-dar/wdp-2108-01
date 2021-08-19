@@ -15,7 +15,7 @@ const mapStateToProps = state => ({
   featured: getNew(state),
   topSeller: getProductForPrice(state, 0, 30),
   saleOff: getOnSale(state),
-  topRated: getMinRate(state, 3),
+  topRated: getMinRate(state, 2),
 });
 
 export default connect(mapStateToProps)(ProductsSlider);
