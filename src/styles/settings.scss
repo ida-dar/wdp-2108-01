@@ -88,3 +88,10 @@ $transition: color 250ms, background-color 250ms;
 %hover-animations {
   transition: $transition;
 }
+
+// Blog
+$blog-bg-dark: $color-gray;
+$blog-bg-light: $color-white;
+$blog-text-grey: $color-gray;
+$blog-border-grey: $color-vlightgray;
+$blog-photo-bg: $color-lightgray;
