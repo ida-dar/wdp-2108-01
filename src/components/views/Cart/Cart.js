@@ -1,26 +1,19 @@
 import React from 'react';
 import styles from './Cart.module.scss';
 import Button from '../../common/Button/Button';
-import { useHistory } from 'react-router-dom';
-//import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-//import { faTrashAlt} from '@fortawesome/free-solid-svg-icons';
 import PropTypes from 'prop-types';
 
-const Cart = ({ products, removeFromCart, clearCart }) => {
-  //const [clicks, setClicks] = React.useState(0);
-
-  //let history = useHistory();
-
-  // const redirect = () => {
-  //   history.push('/');
-  // };
-
-  const handleRemove = product => {
-    removeFromCart(product);
+const Cart = ({ products, removeFromCart, clearCart, quantityDown, quantityUp }) => {
+  const calculateSubtotal = products => {
+    let subtotal = 0;
+    for (const product of products) {
+      subtotal += product.price * product.qty;
+    }
+    return subtotal;
   };
 
-  const handleCheckout = () => {
-    clearCart();
+  const calculateTotal = products => {
+    return products.length == 0 ? 0 : calculateSubtotal(products) + 20;
   };
 
   return (
@@ -38,7 +31,7 @@ const Cart = ({ products, removeFromCart, clearCart }) => {
           {products.map(product => (
             <tr key={product.id} className={styles.tableContent}>
               <td>
-                <div className={styles.delete} onClick={() => handleRemove(product)}>
+                <div className={styles.delete} onClick={() => removeFromCart(product)}>
                   x
                 </div>
                 <div className={styles.img}>
@@ -47,17 +40,21 @@ const Cart = ({ products, removeFromCart, clearCart }) => {
                 <div className={styles.description}>{product.name}</div>
               </td>
               <td>
-                <div>{`${product.price}$`}</div>
+                <div>{`$${product.price}`}</div>
               </td>
               <td>
                 <div>
-                  <span>-</span>
-                  <input type='text' placeholder='1' />
-                  <span>+</span>
+                  <Button variant='qty' onClick={() => quantityDown(product)}>
+                    -
+                  </Button>
+                  <input type='text' placeholder='1' value={product.qty}></input>
+                  <Button variant='qty' onClick={() => quantityUp(product)}>
+                    +
+                  </Button>
                 </div>
               </td>
               <td>
-                <div>{product.price}</div>
+                <div>{`$${product.price * product.qty}`}</div>
               </td>
             </tr>
           ))}
@@ -91,7 +88,7 @@ const Cart = ({ products, removeFromCart, clearCart }) => {
               <div className={styles.subtotal}>Subtotal</div>
             </td>
             <td>
-              <div className={styles.price}>60$</div>
+              <div className={styles.price}>${calculateSubtotal(products)}</div>
             </td>
           </tr>
           <tr>
@@ -99,13 +96,13 @@ const Cart = ({ products, removeFromCart, clearCart }) => {
               <div className={styles.total}>Total</div>
             </td>
             <td>
-              <div className={styles.price}>150$</div>
+              <div className={styles.price}>${calculateTotal(products)}</div>
             </td>
           </tr>
           <tr>
             <td colSpan='2'>
               <div className={styles.proceed}>
-                <Button variant='main' onClick={handleCheckout}>
+                <Button variant='main' onClick={clearCart}>
                   PROCEED TO CHECKOUT
                 </Button>
               </div>
@@ -124,10 +121,13 @@ Cart.propTypes = {
       name: PropTypes.string,
       price: PropTypes.number,
       image: PropTypes.string,
+      qty: PropTypes.number,
     })
   ),
   removeFromCart: PropTypes.func,
   clearCart: PropTypes.func,
+  quantityDown: PropTypes.func,
+  quantityUp: PropTypes.func,
 };
 
 Cart.defaultProps = {
