@@ -1,7 +1,7 @@
 @import "../../../styles/settings.scss";
 
 .root {
-  height: 150px;
+  height: 200px;
   
 
   .heading {
@@ -31,15 +31,24 @@
     border-bottom: 1px solid $brands-border;
     padding: 24px 0;
     margin-bottom: -30px;
-    .row{
-      
-    }
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
   }
 
+  
   .button {
     height: 100%;
     display: flex;
     align-items: center;
+    margin: 0 15px;
+    width:30px;
+  }
+  
+  .logo{
+    display: flex;
+    justify-content: center;
   }
 
 }
