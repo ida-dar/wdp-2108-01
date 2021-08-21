@@ -3,6 +3,8 @@ import React from 'react';
 import styles from './ProductList.module.scss';
 import Button from '../../common/Button/Button';
 import CategoryFilter from '../../common/CategoryFilter/CategoryFilterContainer';
+import FilterColor from '../../features/FilterColor/FilterColor';
+
 
 const ProductList = () => (
   <div className={styles.root}>
@@ -31,6 +33,7 @@ const ProductList = () => (
       <div className={styles.productList + ' col-9'}> Product List </div>
       <div className={styles.filters + ' col-3'}>
         <CategoryFilter />
+        <FilterColor />
         <div className={styles.filterSize}>
           <h5 className={styles.filterHeader}>Filter by size</h5>
           <label className={styles.checkbox}>
