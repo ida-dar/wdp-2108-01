@@ -46,7 +46,7 @@ const ProductBox = ({
     let maxItemsCount = 4;
 
     if (getCount < maxItemsCount) {
-      addToCompare({ id, image });
+      addToCompare({ id, image, name, price, favourite });
       toCompare = true;
     } else {
       alert('You have selected maximum amount of items to compare');
