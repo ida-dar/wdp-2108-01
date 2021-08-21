@@ -12,7 +12,7 @@ import ProductList from './components/views/ProductList/ProductList';
 import ProductPage from './components/views/ProductPage/ProductPage';
 import Search from './components/views/Search/Search';
 import Login from './components/views/Login/Login';
-import Blog from './components/views/Blog/Blog';
+import Blog from './components/views/Blog/BlogContainer';
 import Register from './components/views/Register/Register';
 import Cart from './components/views/Cart/CartContainer';
 
