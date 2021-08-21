@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import styles from './NewFurniture.module.scss';
 import ProductBox from '../../common/ProductBox/ProductBoxContainer';
 import Swipeable from '../Swipeable/Swipeable';
+import CompareProducts from '../../features/CompareProducts/CompareProductsContainer';
 
 class NewFurniture extends React.Component {
   state = {
@@ -109,45 +110,48 @@ class NewFurniture extends React.Component {
     }
 
     return (
-      <Swipeable leftAction={movePageLeft} rightAction={movePageRight}>
-        <div className={styles.root}>
-          <div className='container'>
-            <div className={styles.panelBar}>
-              <div className='row no-gutters align-items-end'>
-                <div className={'col-auto ' + styles.heading}>
-                  <h3>New furniture</h3>
-                </div>
-                <div className={'col ' + styles.menu}>
-                  <ul>
-                    {categories.map(item => (
-                      <li key={item.id}>
-                        <a
-                          className={item.id === activeCategory && styles.active}
-                          onClick={() => this.handleCategoryChange(item.id)}
-                        >
-                          {item.name}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div className={'col-auto ' + styles.dots}>
-                  <ul>{dots}</ul>
+      <React.Fragment>
+        <Swipeable leftAction={movePageLeft} rightAction={movePageRight}>
+          <div className={styles.root}>
+            <div className='container'>
+              <div className={styles.panelBar}>
+                <div className='row no-gutters align-items-end'>
+                  <div className={'col-auto ' + styles.heading}>
+                    <h3>New furniture</h3>
+                  </div>
+                  <div className={'col ' + styles.menu}>
+                    <ul>
+                      {categories.map(item => (
+                        <li key={item.id}>
+                          <a
+                            className={item.id === activeCategory && styles.active}
+                            onClick={() => this.handleCategoryChange(item.id)}
+                          >
+                            {item.name}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div className={'col-auto ' + styles.dots}>
+                    <ul>{dots}</ul>
+                  </div>
                 </div>
               </div>
             </div>
+            <div className={`row ${isFading ? styles.fadeIn : styles.fadeOut}`}>
+              {categoryProducts
+                .slice(activePage * productCount, (activePage + 1) * productCount)
+                .map(item => (
+                  <div key={item.id} className={columnClass}>
+                    <ProductBox {...item} addRating={addRating} />
+                  </div>
+                ))}
+            </div>
           </div>
-          <div className={`row ${isFading ? styles.fadeIn : styles.fadeOut}`}>
-            {categoryProducts
-              .slice(activePage * productCount, (activePage + 1) * productCount)
-              .map(item => (
-                <div key={item.id} className={columnClass}>
-                  <ProductBox {...item} addRating={addRating} />
-                </div>
-              ))}
-          </div>
-        </div>
-      </Swipeable>
+        </Swipeable>
+        <CompareProducts />
+      </React.Fragment>
     );
   }
 }
