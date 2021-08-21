@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import styles from './CompareProducts.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
+import { faStar as faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from '../../common/Button/Button';
 
 const Compare = ({ products, removeCompare }) => {
@@ -16,7 +17,12 @@ const Compare = ({ products, removeCompare }) => {
         <div className={styles.container}>
           {products.map(product => (
             <div key={product.id} className={`col-2 ${styles.imageContainer}`}>
+              <h6>{product.name}</h6>
               <img src={product.image} alt={product.name} />
+              <p>Price: ${product.price}</p>
+              <p className={styles.favourite}>
+                {product.favourite ? <FontAwesomeIcon icon={faHeart} /> : ''}
+              </p>
               <div
                 className={styles.iconContainer}
                 onClick={() => handleRemove(product)}
