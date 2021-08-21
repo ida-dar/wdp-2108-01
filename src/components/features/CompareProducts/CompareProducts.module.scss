@@ -1,0 +1,53 @@
+@import '../../../styles/settings.scss';
+
+.container {
+  position: fixed;
+  z-index: 199;
+  bottom: 0;
+  padding: 0 20px;
+  height: 125px;
+  background-color: $color-white;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+
+  .imageContainer {
+    position: relative;
+    height: 90px;
+
+    .iconContainer {
+      position: absolute;
+      display: none;
+      top: 50%;
+      left: 50%;
+      height: 100%;
+      width: 100%;
+      transform: translate(-50%, -50%);
+      cursor: pointer;
+
+      .icon {
+        font-size: 24px;
+        color: $color-black;
+      }
+    }
+
+    &:hover {
+      opacity: 0.75;
+
+      .iconContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+
+  img {
+    object-fit: cover;
+    cursor: pointer;
+    height: 100%;
+    width: 100%;
+  }
+}

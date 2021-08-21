@@ -8,6 +8,7 @@ import PropTypes from 'prop-types';
 
 const Cart = ({ products, removeFromCart, clearCart }) => {
   //const [clicks, setClicks] = React.useState(0);
+  const [counter, setCounter] = React.useState(1);
 
   //let history = useHistory();
 
@@ -21,6 +22,17 @@ const Cart = ({ products, removeFromCart, clearCart }) => {
 
   const handleCheckout = () => {
     clearCart();
+  };
+
+  const handleIncrement = () => {
+    setCounter(counter + 1);
+  };
+  const handleDecrement = () => {
+    if (counter <= 1) {
+      setCounter(1);
+    } else {
+      setCounter(counter - 1);
+    }
   };
 
   return (
@@ -51,13 +63,13 @@ const Cart = ({ products, removeFromCart, clearCart }) => {
               </td>
               <td>
                 <div>
-                  <span>-</span>
-                  <input type='text' placeholder='1' />
-                  <span>+</span>
+                  <span onClick={() => handleDecrement()}>-</span>
+                  <input type='text' value={counter} />
+                  <span onClick={() => handleIncrement()}>+</span>
                 </div>
               </td>
               <td>
-                <div>{product.price}</div>
+                <div>{product.price * counter}</div>
               </td>
             </tr>
           ))}

@@ -3,6 +3,7 @@ import React from 'react';
 import styles from './ProductList.module.scss';
 import Button from '../../common/Button/Button';
 import CategoryFilter from '../../common/CategoryFilter/CategoryFilterContainer';
+import FilterColor from '../../features/FilterColor/FilterColor';
 
 const ProductList = () => (
   <div className={styles.root}>
@@ -31,6 +32,40 @@ const ProductList = () => (
       <div className={styles.productList + ' col-9'}> Product List </div>
       <div className={styles.filters + ' col-3'}>
         <CategoryFilter />
+        <FilterColor />
+        <div className={styles.filterSize}>
+          <h5 className={styles.filterHeader}>Filter by size</h5>
+          <label className={styles.checkbox}>
+            <input type='checkbox'></input>
+            <span className={styles.customCheckbox}></span>
+            <span className={styles.sizeLetter}>S</span>
+            <span className={styles.sizeNumber}>3</span>
+          </label>
+          <label className={styles.checkbox}>
+            <input type='checkbox'></input>
+            <span className={styles.customCheckbox}></span>
+            <span className={styles.sizeLetter}>M</span>
+            <span className={styles.sizeNumber}>4</span>
+          </label>
+          <label className={styles.checkbox}>
+            <input type='checkbox'></input>
+            <span className={styles.customCheckbox}></span>
+            <span className={styles.sizeLetter}>L</span>
+            <span className={styles.sizeNumber}>5</span>
+          </label>
+          <label className={styles.checkbox}>
+            <input type='checkbox'></input>
+            <span className={styles.customCheckbox}></span>
+            <span className={styles.sizeLetter}>XL</span>
+            <span className={styles.sizeNumber}>5</span>
+          </label>
+          <label className={styles.checkbox}>
+            <input type='checkbox'></input>
+            <span className={styles.customCheckbox}></span>
+            <span className={styles.sizeLetter}>XXL</span>
+            <span className={styles.sizeNumber}>5</span>
+          </label>
+        </div>
       </div>
     </div>
     <div className={styles.brands}> Brands </div>
