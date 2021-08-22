@@ -5,7 +5,6 @@ import Button from '../../common/Button/Button';
 import CategoryFilter from '../../common/CategoryFilter/CategoryFilterContainer';
 import FilterColor from '../../features/FilterColor/FilterColor';
 
-
 const ProductList = () => (
   <div className={styles.root}>
     <div className='container'>

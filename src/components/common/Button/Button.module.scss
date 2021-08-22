@@ -184,3 +184,20 @@
   }
 }
 
+.qty {
+  @extend .main;
+  color: $feature-box-border;
+  background-color: white;
+  border: 1px solid #ddd;
+  font-weight: 800; 
+  padding: 7px 15px;
+
+  &:not(.noHover):hover {
+    @extend %hover-animations;
+    color: $white-text-color;
+    background-color: $primary;
+  }
+}
+
+
+
