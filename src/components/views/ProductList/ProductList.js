@@ -1,10 +1,11 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
 import styles from './ProductList.module.scss';
 import Button from '../../common/Button/Button';
+import Brands from '../../layout/Brands/BrandsContainer';
 import CategoryFilter from '../../common/CategoryFilter/CategoryFilterContainer';
-import FilterColor from '../../features/FilterColor/FilterColor';
 
+import FilterColor from '../../features/FilterColor/FilterColor';
+import NewFurniture from '../../features/NewFurniture/NewFurnitureContainer';
 
 const ProductList = () => (
   <div className={styles.root}>
@@ -29,8 +30,11 @@ const ProductList = () => (
         </div>
       </div>
     </div>
-    <div className={styles.products}>
+    <div className={styles.products + ' ' + styles.container}>
       <div className={styles.productList + ' col-9'}> Product List </div>
+      <div className={styles.productList + ' col-9'}>
+        <NewFurniture subpage='pageShop' />
+      </div>
       <div className={styles.filters + ' col-3'}>
         <CategoryFilter />
         <FilterColor />
@@ -68,11 +72,10 @@ const ProductList = () => (
           </label>
         </div>
       </div>
+      <div className={styles.brands}> Brands </div>
     </div>
-    <div className={styles.brands}> Brands </div>
+    <Brands />
   </div>
 );
-
-// ProductList.propTypes = {};
 
 export default ProductList;

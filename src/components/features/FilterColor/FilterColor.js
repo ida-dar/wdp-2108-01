@@ -1,7 +1,6 @@
 import React from 'react';
 import styles from './FilterColor.module.scss';
 
-
 const FilterColor = () => (
   <div className={styles.filterColorWrapper}>
     <h6>FILTER BY COLOR</h6>
@@ -32,6 +31,5 @@ const FilterColor = () => (
     </div>
   </div>
 );
-
 
 export default FilterColor;

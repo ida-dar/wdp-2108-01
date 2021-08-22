@@ -89,6 +89,17 @@ $transition: color 250ms, background-color 250ms;
   transition: $transition;
 }
 
+// Product Page
+$product-page-bg-dark: $color-gray;
+$product-page-bg-light: $color-white;
+$product-page-bg-photo: $color-vlightgray;
+
+// Brands
+$facebook:  #3b5998;
+$google-red: #DB4437;
+$twitter: #00acee;
+$pinterest: #c8232c;
+$linkedin: #0e76a8;
 // Blog
 $blog-bg-dark: $color-gray;
 $blog-bg-light: $color-white;
