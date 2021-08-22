@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
+import { useState } from 'react';
 import styles from './ProductBox.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExchangeAlt, faShoppingBasket } from '@fortawesome/free-solid-svg-icons';
@@ -8,6 +8,7 @@ import { faStar as faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from '../Button/Button';
 import StarRating from '../StarRating/StarRatingContainer';
 import { Link } from 'react-router-dom';
+import Popout from '../../features/Popout/Popout';
 
 const ProductBox = ({
   name,
@@ -21,21 +22,61 @@ const ProductBox = ({
   userRating,
   changeFavourite,
   addToCart,
+  addToCompare,
+  getCount,
 }) => {
+  const [popout, setPopout] = useState(false);
+
+  const handleShowPopout = () => {
+    setPopout(true);
+  };
+
+  const handleHidePopout = () => {
+    setPopout(false);
+  };
+
   const handleCart = e => {
     e.preventDefault();
     addToCart({ id, name, price, image });
   };
 
+  const handleCompare = e => {
+    e.preventDefault();
+
+    let maxItemsCount = 4;
+
+    if (getCount < maxItemsCount) {
+      addToCompare({ id, image, name, price, favourite });
+      toCompare = true;
+    } else {
+      alert('You have selected maximum amount of items to compare');
+    }
+  };
+
   return (
     <div className={styles.root}>
+      <div
+        className={popout ? styles.popoutShow : styles.popoutHide}
+        onClick={() => handleHidePopout()}
+      >
+        <div className={styles.popoutContainer}>
+          <div className={styles.buttonWrapper}>
+            <Button variant='small' onClick={() => handleHidePopout()}>
+              x
+            </Button>
+          </div>
+          <Popout name={name} price={price} promo={promo} image={image} />
+        </div>
+      </div>
       <div className={styles.photo}>
         <Link to={`/product/${id}`}>
           <img src={image} alt={name} />
         </Link>
         {promo && <div className={styles.sale}>{promo}</div>}
         <div className={styles.buttons}>
-          <Button variant='small'>Quick View</Button>
+          <Button onClick={() => handleShowPopout()} variant='small'>
+            Quick View
+          </Button>
           <Button variant='small' onClick={handleCart}>
             <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> ADD TO CART
           </Button>
@@ -58,7 +99,7 @@ const ProductBox = ({
           >
             <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
           </Button>
-          <Button variant='outline' toCompare={toCompare}>
+          <Button variant='outline' onClick={handleCompare}>
             <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
           </Button>
         </div>
@@ -85,6 +126,8 @@ ProductBox.propTypes = {
   toCompare: PropTypes.bool,
   changeFavourite: PropTypes.func,
   addToCart: PropTypes.func,
+  addToCompare: PropTypes.func,
+  getCount: PropTypes.number,
 };
 
 export default ProductBox;
