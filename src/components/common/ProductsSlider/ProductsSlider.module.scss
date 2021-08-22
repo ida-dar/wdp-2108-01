@@ -1,7 +1,7 @@
 @import "../../../styles/settings.scss";
 
 .root {
-  height: 100px;
+  height: 100%;
 
   .panelBar {
     margin-bottom: 30px;
@@ -227,11 +227,17 @@
     overflow: hidden;
     display: flex;
     flex-wrap: nowrap;
-    
+
     .imageWrapper {
       margin: 0 5px;
     }
-  
+
   }
 
+}
+
+@media (min-width: 756px) {
+  .root {
+    padding-bottom: 36px;
+  }
 }
