@@ -18,6 +18,10 @@
       background: lightblue;
     }
 
+    .filters {
+      display: flex;
+      flex-direction: column-reverse;
+    }
   }
 
   .brands {
