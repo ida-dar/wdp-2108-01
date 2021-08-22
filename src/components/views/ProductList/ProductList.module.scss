@@ -18,13 +18,10 @@
       background: lightblue;
     }
 
-<<<<<<< HEAD
     .filters {
       display: flex;
       flex-direction: column-reverse;
     }
-=======
->>>>>>> c8f240b (Add filter by size)
   }
 
   .brands {
@@ -92,8 +89,6 @@
 
   }
 }
-<<<<<<< HEAD
-=======
 
 .filters {
   font-size: 15px;
@@ -114,6 +109,7 @@
     width: 75%;
     text-align: left;
     padding-left: 24px;
+    background: none;
   }
 
   .checkbox {
@@ -182,4 +178,3 @@
     background-color: $color-darkorange;
   }
 }
->>>>>>> c8f240b (Add filter by size)
