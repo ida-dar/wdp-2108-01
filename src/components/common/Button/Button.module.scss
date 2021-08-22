@@ -184,6 +184,94 @@
   }
 }
 
+.sideArrows {
+  @extend .outline;
+  background-color: #ffffff;
+  color: $text-color;
+  border-color: $text-color;
+
+  &:not(.noHover):hover {
+    @extend %hover-animations;
+    background-color: $primary;
+    color: #ffffff;
+    border-color: $primary;
+  }
+}
+
+.favourite2 {
+  @extend .outline;
+  background-color: $primary;
+  color: #ffffff;
+  border-color: $primary;
+ 
+  &:not(.noHover):hover {
+    border-color: $text-color;
+  }
+}
+
+.quantityChange {
+  @extend .sideArrows;
+  
+  &:not(.noHover):hover {
+    @extend %hover-animations;
+    background-color: #ffffff;
+    color: $primary;
+    border-color: $primary;
+  }
+}
+
+.facebook {
+  @extend .favourite2;
+  background-color: $facebook;
+  color: #ffffff;
+  border-color: $facebook;
+ 
+  &:not(.noHover):hover {
+    background-color: #ffffff;
+    color: $text-color;
+    border-color: $text-color;
+  }
+}
+
+.google {
+  @extend .sideArrows;
+
+  &:not(.noHover):hover {
+    @extend %hover-animations;
+    background-color: $google-red;
+    border-color: $google-red;
+  }
+}
+
+.tweet {
+  @extend .sideArrows;
+
+  &:not(.noHover):hover {
+    @extend %hover-animations;
+    background-color: $twitter;
+    border-color: $twitter;
+  }
+}
+
+.pinterest {
+  @extend .sideArrows;
+
+  &:not(.noHover):hover {
+    @extend %hover-animations;
+    background-color: $pinterest;
+    border-color: $pinterest;
+  }
+}
+
+.linkedin {
+  @extend .sideArrows;
+
+  &:not(.noHover):hover {
+    @extend %hover-animations;
+    background-color: $linkedin;
+    border-color: $linkedin;
+  }
+}
 .qty {
   @extend .main;
   color: $feature-box-border;
