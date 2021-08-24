@@ -8,53 +8,15 @@ class Gallery extends React.Component {
   state = {
     activePage: 0,
     pagesCount: 3,
-    isFading: false,
-    activeTab: 'featured',
   };
 
   handlePageChange(newPage) {
     this.setState({ activePage: newPage });
   }
 
-  handleTabChange(newTab) {
-    this.setState({
-      activeTab: newTab,
-      isFading: true,
-    });
-    if (this.state.isFading === false) {
-      setTimeout(
-        function() {
-          this.setState({ isFading: false });
-        }.bind(this),
-        1000
-      );
-    }
-  }
-
   render() {
-    const { featured, topSeller, saleOff, topRated } = this.props;
     const { pagesCount, activePage } = this.state;
     //const { actives } = this.props;
-    const { activeTab } = this.state;
-
-    const tabs = [
-      {
-        id: 'Featured',
-        products: featured,
-      },
-      {
-        id: 'TopSeller',
-        products: topSeller,
-      },
-      {
-        id: 'Sale Off',
-        products: saleOff,
-      },
-      {
-        id: 'Top Rated',
-        products: topRated,
-      },
-    ];
 
     const dots = [];
     for (let i = 0; i < pagesCount; i++) {

@@ -11,7 +11,6 @@ import { faExchangeAlt, faShoppingBasket } from '@fortawesome/free-solid-svg-ico
 import { faStar as faHeart } from '@fortawesome/free-regular-svg-icons';
 import StarRating from '../StarRating/StarRatingContainer';
 
-
 const ProductsSlider = ({ products, featured, topSeller, saleOff, topRated }) => {
   const [product] = useState(6);
   const [activePage] = useState(0);
@@ -34,31 +33,64 @@ const ProductsSlider = ({ products, featured, topSeller, saleOff, topRated }) =>
       prod: topRated,
     },
   ];
-  console.log('tabs',tabs);
+  console.log('tabs', tabs);
 
-  const [isFading, setFading] = useState(false);
-  const [isProductFading, setProductFading] = useState(false);
+  const [Fading, setFading] = useState(false);
   const [activeTab, setActiveTab] = useState(tabs[0]);
   const [activeProduct, setActiveProduct] = useState(activeTab.prod[0]);
-  const [number, setNumber] = useState(0);
+  const [tabProducts, setTabProduct] = useState(activeTab.prod);
 
-  const handleTabChange = (number) => {
+  const handleTabChange = tabName => {
+    let tabNumber = 0;
     setFading(true);
-    //setTimeout(() => {
-    console.log('number',number);
-    setActiveTab(tabs[number]);
-    // if(tabPressed == tabs.name){
-    setActiveProduct(tabs[number].prod[0]);
-    console.log('activeTab',activeTab);
-    console.log('activeProduct',activeProduct);
-    //}
-    //}, 300);
+    switch (tabName) {
+      case 'FEATURED':
+        tabNumber = 0;
+        setTimeout(() => {
+          console.log('tabNumber', tabNumber);
+          setActiveTab(tabs[tabNumber]);
+          setActiveProduct(tabs[tabNumber].prod[5]);
+          setTabProduct(tabs[tabNumber].prod);
+          console.log('actvieProduct', activeProduct);
+        }, 400);
+        break;
+      case 'TOP SELLER':
+        tabNumber = 1;
+        setTimeout(() => {
+          console.log('tabNumber', tabNumber);
+          setActiveTab(tabs[tabNumber]);
+          setActiveProduct(tabs[tabNumber].prod[1]);
+          setTabProduct(tabs[tabNumber].prod);
+          console.log('actvieProduct', activeProduct);
+        }, 400);
+        break;
+      case 'SALE OFF':
+        tabNumber = 2;
+        setTimeout(() => {
+          console.log('tabNumber', tabNumber);
+          setActiveTab(tabs[tabNumber]);
+          setActiveProduct(tabs[tabNumber].prod[2]);
+          setTabProduct(tabs[tabNumber].prod);
+          console.log('actvieProduct', activeProduct);
+        }, 400);
+        break;
+      case 'TOP RATED':
+        tabNumber = 3;
+        setTimeout(() => {
+          console.log('tabNumber', tabNumber);
+          setActiveTab(tabs[tabNumber]);
+          setActiveProduct(tabs[tabNumber].prod[0]);
+          setTabProduct(tabs[tabNumber].prod);
+          console.log('actvieProduct', activeProduct);
+        }, 400);
+        break;
+      default:
+    }
+
     setTimeout(() => {
       setFading(false);
     }, 500);
   };
-
-
 
   return (
     <div className={styles.root}>
@@ -78,7 +110,7 @@ const ProductsSlider = ({ products, featured, topSeller, saleOff, topRated }) =>
             <Button
               variant='category'
               className={styles.active}
-              onClick={() => handleTabChange(0)}
+              onClick={() => handleTabChange('FEATURED')}
             >
               FEATURED
             </Button>
@@ -87,7 +119,7 @@ const ProductsSlider = ({ products, featured, topSeller, saleOff, topRated }) =>
             <Button
               variant='category'
               className={styles.active}
-              onClick={() => handleTabChange(1)}
+              onClick={() => handleTabChange('TOP SELLER')}
             >
               TOP SELLER
             </Button>
@@ -96,7 +128,7 @@ const ProductsSlider = ({ products, featured, topSeller, saleOff, topRated }) =>
             <Button
               variant='category'
               className={styles.active}
-              onClick={() => handleTabChange(2)}
+              onClick={() => handleTabChange('SALE OFF')}
             >
               SALE OFF
             </Button>
@@ -105,7 +137,7 @@ const ProductsSlider = ({ products, featured, topSeller, saleOff, topRated }) =>
             <Button
               variant='category'
               className={styles.active}
-              onClick={() => handleTabChange(3)}
+              onClick={() => handleTabChange('TOP RATED')}
             >
               TOP RATED
             </Button>
@@ -116,7 +148,11 @@ const ProductsSlider = ({ products, featured, topSeller, saleOff, topRated }) =>
       <div className='container'>
         <div className={styles.mainPartWrapper}>
           <div className={styles.imageWrapper}>
-            <img className={styles.image} src={activeProduct.image} alt={activeProduct.name} />
+            <img
+              className={styles.image}
+              src={activeProduct.image}
+              alt={activeProduct.name}
+            />
           </div>
 
           <div className={styles.actionsWrapper}>
@@ -143,14 +179,14 @@ const ProductsSlider = ({ products, featured, topSeller, saleOff, topRated }) =>
           </div>
 
           <div className={styles.content}>
-            <h5>product name</h5>
+            <h5>{activeProduct.name}</h5>
             <div className={styles.stars}>
-              <StarRating stars={5} id={0} userRating={2} />
+              <StarRating stars={activeProduct.stars} id={0} userRating={2} />
             </div>
           </div>
 
           <div className={styles.timeBarItem}>
-            <div className={styles.number}>$120.00</div>
+            <div className={styles.number}>{activeProduct.price}</div>
             <div className={styles.timeUnit}>$160.00</div>
           </div>
         </div>
@@ -165,7 +201,7 @@ const ProductsSlider = ({ products, featured, topSeller, saleOff, topRated }) =>
           </div>
           <div className='col-10'>
             <div className={`row justify-content-between ${styles.imagesWrapper}`}>
-              {products
+              {tabProducts
                 .slice(activePage * product, (activePage + 1) * product)
                 .map((item, index) => (
                   <div key={item.id} className={styles.imageWrapper}>
