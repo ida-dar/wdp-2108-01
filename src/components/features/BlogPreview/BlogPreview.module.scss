@@ -1,16 +1,26 @@
 @import "../../../styles/settings.scss";
 
 .root {
-  .panelBar {
-    margin-bottom: 30px;
-    position: relative;
+  padding: $base-padding 0;
+  display: flex;
+  justify-content: center;
 
-    :global(.row) > * {
-      border-bottom: 4px solid $new-furniture-border;
-    }
+
+  .container {
+    width: 80%;
+
+    .panelBar {
+      margin: 30px;
+      position: relative;
+      width: 95%;
+
+      :global(.row) > * {
+        border-bottom: 4px solid $new-furniture-border;
+      }
 
     .heading {
       position: relative;
+      width: 100%;
 
       h3 {
         color: $primary;
@@ -28,44 +38,6 @@
         left: 0;
         width: 45px;
         border-bottom: 4px solid $primary;
-      }
-    }
-
-    .pageShop {
-      display: none;
-    }
-
-    .menu {
-      text-align: center;
-      ul {
-        margin: 0;
-        padding: 0;
-        list-style: none;
-        li {
-          display: inline-block;
-          margin: 0 0.5rem;
-          font-weight: 600;
-
-          a {
-            color: rgb(42, 42, 42);
-            position: relative;
-            text-decoration: none;
-            font-size: 18px;
-            display: block;
-
-            &.active,
-            &:hover {
-              &::before {
-                content: "";
-                position: absolute;
-                bottom: -4px;
-                left: 0;
-                width: 100%;
-                border-bottom: 4px solid $primary;
-              }
-            }
-          }
-        }
       }
     }
 
@@ -104,13 +76,11 @@
     }
   }
 
-  .fadeIn {
-    opacity: 0;
-    transition: opacity 500ms ease-in-out;
+  .articles {
+    position: relative;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 15px;
   }
-
-  .fadeOut {
-    opacity: 1;
-    transition: opacity 500ms ease-in-out;
   }
 }

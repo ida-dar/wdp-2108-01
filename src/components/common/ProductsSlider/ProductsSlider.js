@@ -10,10 +10,27 @@ import Button from '../Button/Button';
 import { faExchangeAlt, faShoppingBasket } from '@fortawesome/free-solid-svg-icons';
 import { faStar as faHeart } from '@fortawesome/free-regular-svg-icons';
 import StarRating from '../StarRating/StarRatingContainer';
+import Swipeable from '../../features/Swipeable/Swipeable';
 
 const ProductsSlider = ({ products, featured, topSeller, saleOff, topRated }) => {
   const [product] = useState(6);
-  const [activePage] = useState(0);
+  const [activePage, setActivePage] = useState(0);
+
+  const handleClickPrev = e => {
+    e.preventDefault();
+
+    if (activePage > 0 && activePage <= products.length / product) {
+      setActivePage(activePage - 1);
+    }
+  };
+
+  const handleClickNext = e => {
+    e.preventDefault();
+
+    if (activePage >= 0 && activePage < products.length / product - 1) {
+      setActivePage(activePage + 1);
+    }
+  };
 
   const tabs = [
     {
@@ -193,29 +210,39 @@ const ProductsSlider = ({ products, featured, topSeller, saleOff, topRated }) =>
       </div>
 
       <div className='container'>
-        <div className={'row justify-content-between ' + styles.products}>
-          <div className={`col-1 ${styles.buttonWrapper}`}>
-            <Button className={styles.button} variant='small'>
-              <FontAwesomeIcon icon={faChevronLeft} />
-            </Button>
-          </div>
-          <div className='col-10'>
-            <div className={`row justify-content-between ${styles.imagesWrapper}`}>
-              {tabProducts
-                .slice(activePage * product, (activePage + 1) * product)
-                .map((item, index) => (
-                  <div key={item.id} className={styles.imageWrapper}>
-                    <ProductImage index={index} {...item} />
-                  </div>
-                ))}
+        <Swipeable leftAction={handleClickPrev} rightAction={handleClickNext}>
+          <div className={'row justify-content-between ' + styles.products}>
+            <div className={`col-1 ${styles.buttonWrapper}`}>
+              <Button
+                className={styles.button}
+                variant='small'
+                onClick={handleClickPrev}
+              >
+                <FontAwesomeIcon icon={faChevronLeft} />
+              </Button>
+            </div>
+            <div className='col-10'>
+              <div className={`row justify-content-between ${styles.imagesWrapper}`}>
+                {products
+                  .slice(activePage * product, (activePage + 1) * product)
+                  .map((item, index) => (
+                    <div key={item.id} className={styles.imageWrapper}>
+                      <ProductImage index={index} {...item} />
+                    </div>
+                  ))}
+              </div>
+            </div>
+            <div className={`col-1 ${styles.buttonWrapper}`}>
+              <Button
+                className={styles.button}
+                variant='small'
+                onClick={handleClickNext}
+              >
+                <FontAwesomeIcon icon={faChevronRight} />
+              </Button>
             </div>
           </div>
-          <div className={`col-1 ${styles.buttonWrapper}`}>
-            <Button className={styles.button} variant='small'>
-              <FontAwesomeIcon icon={faChevronRight} />
-            </Button>
-          </div>
-        </div>
+        </Swipeable>
       </div>
     </div>
   );

@@ -35,12 +35,14 @@ class Gallery extends React.Component {
     return (
       <section className={styles.root}>
         <div className='container'>
-          <div className={`row ${styles.wrapper}`}>
-            <div className={`col-6 ${styles.productWrapperLeft}`}>
+          <div className={`${styles.wrapper}`}>
+            <div
+              className={`col-lg-6 col-md-12 col-sm-12 ${styles.productWrapperLeft}`}
+            >
               <ProdcutsSlider />
             </div>
 
-            <div className={`col-6 ${styles.productWrapperRight}`}>
+            <div className={`col-lg-6 col-md-12 ${styles.productWrapperRight}`}>
               <div className={styles.imgWrapper}>
                 <img
                   src={
